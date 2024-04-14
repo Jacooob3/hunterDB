@@ -6,7 +6,7 @@
 }
 
 header {
-  background-color: #a8ca29;
+  background-color: #097969;
   color: #fff;
   padding: 20px;
   display: flex;
@@ -99,7 +99,7 @@ nav ul li a:hover {
 
 .toy-card h2 {
   margin-top: 30px;
-  color: #a8ca29;
+  color: #097969;
 }
 
 .toy-details-container {
@@ -152,7 +152,7 @@ input[type="text"] {
 
 button {
   padding: 10px 20px;
-  background-color: #a8ca29;
+  background-color: #033e1c;
   color: #fff;
   border: none;
   border-radius: 5px;
