@@ -12,12 +12,8 @@
         <?php include 'includes/header.php';?>
 		<main>
 			<section>
-
-
 				<div class="welcome">
 					<h2>Welcome to the Hunting Database!</h2>
-                    <br>
-
 					<p>Please login or sign up to access the database.</p>
 					<div class="buttons">
 						<a href="login.php" class="button">Login   </a>
