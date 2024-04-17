@@ -32,48 +32,40 @@
         return pdo($pdo, $sql)->fetchAll();
     }
 
+    function get_hunter_dropdown(PDO $pdo) {
+        $sql = "SELECT 
+                CONCAT (lname, ', ', fname, ' -> ', hunter_id ) AS hunter_name,
+                hunter_id
+            FROM hunter;";	
+        return pdo($pdo, $sql)->fetchAll();
+    }
+
+    function get_license_dropdown(PDO $pdo) {
+        $sql = "SELECT 
+                license_id,
+                CONCAT (license_id, '->',  state_id) AS license_idstate
+            FROM license;";	
+        return pdo($pdo, $sql)->fetchAll();
+    }
 
     $state_dropdown = get_state_dropdown($pdo);
     $warden_dropdown = get_warden_dropdown($pdo);
     $weapon_dropdown = get_weapon_dropdown($pdo);
     $animal_dropdown = get_animal_dropdown($pdo);
-
-
-
+    $hunter_dropdown = get_hunter_dropdown($pdo);
+    $license_dropdown = get_license_dropdown($pdo);
 
 ?> 
 
 <html>
-	<?php include 'includes/head.php';?>
+    <?php include 'includes/head.php';?>
     <body>
         <?php include 'includes/header.php';?>
  		<main>
 			<div class="about-container">
 				<h1>WARDEN REGISTER EVENT</h1>
 				<hr />
-                <form action="logevent.php" method="GET">
-                    <div>
-                        <label for="hunter_id">Hunter ID</label>                        
-                        <input name="hunter_id" id="hunter_id"/>
-                    </div>
-                    <div>
-                        <label for="weapon_id">Weapon Type</label>
-                        <select name="weapon_id" id="weapon_id">
-                        <option selected="selected" disabled="disabled">Select a weapon type</option>
-                        <?php foreach ($weapon_dropdown as $row): ?>
-                                <option value=<?=$row["weapon_id"]?>><?=$row["weapon_type"]?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                    <div>
-                        <label for="animal_id">Animal</label>
-                        <select name="animal_id" id="animal_id">
-                            <option selected="selected" disabled="disabled">Select a language</option>
-                            <?php foreach ($animal_dropdown as $row): ?>
-                                <option value=<?=$row["animal_id"]?>><?=$row["animal_name"]?></option>
-                            <?php endforeach ?>
-                        </select>
-                    </div>
+                <form action="logkillevent.php" method="GET">
                     <div>
                         <label for="warden_ID">Warden</label>
                         <select name="warden_id" id="warden_id">
@@ -84,8 +76,40 @@
                         </select>
                     </div>
                     <div>
+                        <label for="hunter_id">Hunter ID</label>                        
+                        <select name="hunter_id" id="hunter_id"/>
+                            <option selected="selected" disabled="disabled">Select a hunter</option>
+                            <?php foreach ($hunter_dropdown as $row): ?>
+                                <option value=<?=$row["hunter_id"]?>><?=$row["hunter_name"]?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="weapon_id">Weapon Type</label>
+                        <select name="weapon_id" id="weapon_id">
+                            <option selected="selected" disabled="disabled">Select a weapon type</option>
+                            <?php foreach ($weapon_dropdown as $row): ?>
+                                <option value=<?=$row["weapon_id"]?>><?=$row["weapon_type"]?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div>
+                    <label for="animal_id">Animal</label>
+                        <select name="animal_id" id="animal_id">
+                            <option selected="selected" disabled="disabled">Select an Animal</option>
+                            <?php foreach ($animal_dropdown as $row): ?>
+                                <option value=<?=$row["animal_id"]?>><?=$row["animal_name"]?></option>
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                    <div>
                         <label for="license_id">License ID</label>
-                        <input name="license_id" id="license_id"/>
+                        <select name="license_id" id="license_id">
+                            <option selected="selected" disabled="disabled">Select an License</option>
+                            <?php foreach ($license_dropdown as $row): ?>
+                                <option value=<?=$row["license_id"]?>><?=$row["license_idstate"]?></option>
+                            <?php endforeach ?>
+                        </select>
                     </div>
                     <div>
                         <label for="state_id">State</label>
