@@ -97,9 +97,10 @@ label {
   display: block;
   margin-bottom: 5px;
 }
-label[for="username"]{
-  display: inline-block;
+label[for="username"],label[for="password"]{
+  display: block;
   margin-bottom: 5px;
+  text-align: center;
   
 }
 
