@@ -15,6 +15,7 @@
 		    <div class="header-right">
 		    	<ul>
 		    		<li><a href="warden.php">Warden Entry</a></li>
+					<li><a href="login.php">Sign In</a></li>
 		    	</ul>
 		    </div>
 </header>
