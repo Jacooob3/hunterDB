@@ -13,7 +13,7 @@
 <?php include 'includes/head.php';?>
     <body>
         <?php include 'includes/header.php';?>
-        <div class="container">
+        <div class="container-signup">
             <h2>Sign Up</h2>
             <form action="signup-process.php" method="POST">
                 <div class="form-group">

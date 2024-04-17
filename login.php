@@ -11,7 +11,7 @@
         return pdo($pdo, $sql, ['username' => $username, 'password' => $password])->fetchAll();
     }
 
-    
+
 	
 // Closing PHP tag  ?> 
 
@@ -25,7 +25,7 @@
 <?php include 'includes/head.php';?>
     <body>
         <?php include 'includes/header.php';?>
-        <div class="container">
+        <div class="container-login">
             <h2>Login</h2>
             <form action="login-process.php" method="POST">
                 <div class="form-group">
