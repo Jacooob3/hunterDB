@@ -1,44 +1,32 @@
-<?php   										// Opening PHP tag
-	// Include the database connection script
-	require 'includes/database-connection.php';
-	
-    function get_account(PDO $pdo, string $username, string $password) {
-        $sql = "SELECT 
-                    username,
-                    password
-                FROM account
-                WHERE username = :username AND password = :password;";	
-        return pdo($pdo, $sql, ['username' => $username, 'password' => $password])->fetchAll();
-    }
+<?php 
+    session_start(); 
+    require 'includes/database-connection.php';
+?>
 
-
-	
-// Closing PHP tag  ?> 
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
-</head>
+<html>
 <?php include 'includes/head.php';?>
     <body>
         <?php include 'includes/header.php';?>
-        <div class="container-login">
-            <h2>Login</h2>
-            <form action="login-process.php" method="POST">
-                <div class="form-group">
-                    <label for="username">Username:</label>
-                    <input type="text" name="username" id="username" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <button type="submit">Login</button>
-            </form>
-        </div>
+        <center>
+            <h2>Warden Login</h2>
+            <h2>Enter Warden Email and Password
+                <form action='' method='post'>
+                    <label for="email">EMAIL: </label>
+                    <input type ='text' id='email' name='email'>
+                    <label for="password">PASSWORD: </label>
+                    <input type ='text' id='password' name='password'>
+                    <input type='submit' value='Login' name='Login'>
+                </form>
+                <?php
+                    
+                    if (isset($_POST['Login'])) {
+                        $_SESSION['email'] = $_POST['email'];
+                        $_SESSION['password'] = $_POST['password'];
+                        echo $_SESSION['email'];
+                        header( 'Location: ./postlogin.php' );
+                    }
+                ?>
+        <center>						 
     </body>
 </html>
+
