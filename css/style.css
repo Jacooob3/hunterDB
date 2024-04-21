@@ -97,11 +97,17 @@ label {
   display: block;
   margin-bottom: 5px;
 }
-.container-login, .container-signup{
+.container-login{
   display: flex;
   justify-content: center; /* Centers horizontally */
   align-items: center; /* Centers vertically if needed */
   height: 100px; /* Adjust the height as needed */
+}
+
+.container-signup{
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+
 }
 label[for="username"],
 label[for="password"]{

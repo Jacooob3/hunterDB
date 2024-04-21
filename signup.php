@@ -17,6 +17,14 @@
         <h2>Sign Up</h2>
         <form action="signup-process.php" method="POST">
             <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form-group">
                 <label for="firstname">First Name:</label>
                 <input type="text" name="firstname" id="firstname" required>
             </div>
@@ -44,14 +52,7 @@
                 <label for="email">Email:</label>
                 <input type="email" name="email" id="email" required>
             </div>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" name="username" id="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" name="password" id="password" required>
-            </div>
+            
             <button type="submit">Sign Up</button>
         </form>
     </div>
