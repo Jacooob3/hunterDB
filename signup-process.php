@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt->execute([$hunter_id, $firstname, $lastname, $address_id , $dob, $gender, $email, $username, $hashed_password]);
 
         // Insert the license number into the license table
-        $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id, ) VALUES (?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id) VALUES (?, ?, ?)");
         $stmt->execute([$license_number, $state, $hunter_id,]);
 
         
