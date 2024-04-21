@@ -128,6 +128,7 @@ Sign up Styles
   min-height: 100vh; /* At least full height of the viewport */
   flex-direction: column; /* Stack children vertically */
   padding: 20px;
+  padding-top: 400 px;
 }
 
 /* Style the form itself */
