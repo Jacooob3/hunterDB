@@ -50,6 +50,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Insert the new user into the hunter table
     try {
         $pdo->beginTransaction();
+        // Insert the address into the address table
+        $stmt = $pdo->prepare("INSERT INTO address (address_id, street, state_id, city, zip) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$address_id, $street, $state, $city, $zip]);
+        
         $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, fname, lname, address_id, date_of_birth, gender, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$hunter_id, $firstname, $lastname, $address_id , $dob, $gender, $email, $username, $hashed_password]);
 
@@ -57,9 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id, ) VALUES (?, ?, ?)");
         $stmt->execute([$license_number, $state, $hunter_id,]);
 
-        // Insert the address into the address table
-        $stmt = $pdo->prepare("INSERT INTO address (address_id, street, city, zip) VALUES (?, ?, ?, ?)");
-        $stmt->execute([$address_id, $street, $city, $zip]);
+        
 
         $pdo->commit();
 
