@@ -12,6 +12,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST['email']);
     $username = trim($_POST['username']);
     $password = trim($_POST['password']);
+    $street = trim($_POST['street']);
+    $city = trim($_POST['city']);
+    $zip = trim($_POST['zip']);
 
     // Validate input
     if (empty($username) || empty($password) || empty($email) || empty($firstname) || empty($lastname) || empty($dob) || empty($gender) || empty($license_number)) {
@@ -41,15 +44,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Assign Hunter ID
     $hunter_id = $pdo->query("SELECT MAX(hunter_id) + 1 AS next_id FROM hunter")->fetch()['next_id'];
 
+    // Address ID
+    $address_id = $pdo->query("SELECT MAX(address_id) + 1 AS next_id FROM address")->fetch()['next_id'];
+
     // Insert the new user into the hunter table
     try {
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, fname, lname, date_of_birth, gender, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$hunter_id, $firstname, $lastname, $dob, $gender, $email, $username, $hashed_password]);
+        $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, fname, lname, address_id, date_of_birth, gender, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt->execute([$hunter_id, $firstname, $lastname, $address_id , $dob, $gender, $email, $username, $hashed_password]);
 
         // Insert the license number into the license table
         $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id, ) VALUES (?, ?, ?)");
         $stmt->execute([$license_number, $state, $hunter_id,]);
+
+        // Insert the address into the address table
+        $stmt = $pdo->prepare("INSERT INTO address (address_id, street, city, zip) VALUES (?, ?, ?, ?)");
+        $stmt->execute([$address_id, $street, $city, $zip]);
 
         $pdo->commit();
 
