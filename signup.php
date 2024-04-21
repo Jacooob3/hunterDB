@@ -45,6 +45,13 @@
                 </select>
             </div>
             <div class="form-group">
+                <label for="state">State:</label>
+                <select name="state" id="state" required>
+                    <option value="MA">Massachusetts</option>
+                    <option value="RI">Rhode Island</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <label for="license_number">License Number:</label>
                 <input type="text" name="license_number" id="license_number" required>
             </div>

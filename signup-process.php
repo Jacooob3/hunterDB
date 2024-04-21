@@ -7,6 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $lastname = trim($_POST['lastname']);
     $dob = trim($_POST['dob']);
     $gender = trim($_POST['gender']);
+    $state = trim($_POST['state']); 
     $license_number = trim($_POST['license_number']);
     $email = trim($_POST['email']);
     $username = trim($_POST['username']);
@@ -43,12 +44,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Insert the new user into the hunter table
     try {
         $pdo->beginTransaction();
-        $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, firstname, lastname, dob, gender, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, fname, lname, date_of_birth, gender, email, username, password) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
         $stmt->execute([$hunter_id, $firstname, $lastname, $dob, $gender, $email, $username, $hashed_password]);
 
         // Insert the license number into the license table
-        $stmt = $pdo->prepare("INSERT INTO license (hunter_id, license_id) VALUES (?, ?)");
-        $stmt->execute([$hunter_id, $license_number]);
+        $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id, ) VALUES (?, ?, ?)");
+        $stmt->execute([$license_number, $state, $hunter_id,]);
 
         $pdo->commit();
 
