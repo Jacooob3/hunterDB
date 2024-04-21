@@ -1,15 +1,17 @@
 <?php
-
-//  alter table xhqxvqte_toystore.game_warden add column pass varchar(255);
-// 
+        //  alter table xhqxvqte_toystore.game_warden add column pass varchar(255);
+        // 
         session_start();
         require 'includes/database-connection.php';
+        
+        // expects sessions to be set from calling page
         $email = $_SESSION['email'];
         $pass = $_SESSION['password'];
 
-        $sql = "    SELECT pass=:id1 as logincheck
+        // check for a valid combo
+        $sql = "    SELECT warden_id
                     FROM game_warden
-                    WHERE email=:id2;";
+                    WHERE pass=:id1 and email=:id2;";
 
         $result = pdo($pdo, $sql, ['id1' => $pass,'id2' => $email])->fetch();
 
@@ -23,9 +25,24 @@
             <h2>Warden POST Login</h2>
             <?php echo $email; ?>
             <hr>
-             <?php echo $pass; ?>
-             <hr>
-             <?php echo $result['logincheck']; ?>
+            <?php echo $pass; ?>
+            <hr>
+            <?php 
+                // if we have a resulte the login succeded 
+                if ($result != null) {
+                    echo $result['warden_id']; 
+                    echo ' logged in correctly'; 
+                    // store the warden id in the session and 
+                    // blank the password for security
+                    $_SESSION['warden_id'] = $result['warden_id'];
+                    $_SESSION['pass'] = ''; 
+
+
+                    
+                } else {
+                    echo 'username password not valid'; 
+                }
+            ?>
         <center>						 
     </body>
 </html>
