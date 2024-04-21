@@ -4,8 +4,8 @@
         <?php include 'includes/header.php';?>
         <center>
             <h2>HUNTER</h2>
-            <h2>Find Hunter Enter a Name or ID
-            <form action='listhunter.php' method='get'>
+            <h2>Find Hunter Enter a Name or ID</h2>
+                <form action='listhunter.php' method='get'>
                     <input type ='text' name='searchtext'>
                     <input type='submit' value='Search'>
                 </form>
@@ -13,7 +13,14 @@
                     <input type ='text' name='searchtext'>
                     <input type='submit' value='Search'>
                 </form>
-            </h2>
+            <h2>Find Hunter Kills by ID</h2>
+                <form action='listhunterkills.php' method='get'>
+                    <input type ='text' name='searchtext'>
+                    <input type='submit' value='Search'>
+                </form>
+
+
+
         <center>						 
     </body>
 </html>
