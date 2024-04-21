@@ -108,38 +108,14 @@ Sign up Styles
   margin-bottom: 20px;
 }
 
-/* This will style each input within the form groups */
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="date"],
-.form-group select {
-  width: 100%; /* Makes input take full width of its parent */
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-/* Center the form both vertically and horizontally */
 .container-signup{
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
   display: flex;
-  justify-content: center; /* Centers horizontally */
-  align-items: center; /* Centers vertically */
-  min-height: 100vh; /* At least full height of the viewport */
-  flex-direction: column; /* Stack children vertically */
-  padding: 20px;
-  padding-top: 400 px;
-}
-
-/* Style the form itself */
-.container-signup form {
-  width: 90%; /* Responsive width */
-  max-width: 400px; /* Maximum width of the form */
-  margin: auto; /* Centers the form in the available space */
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: white;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Enhance the visual feedback on hover and focus */
