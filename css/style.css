@@ -89,10 +89,6 @@ nav ul li a:active {
   margin-top: 20px;
 }
 
-.form-group {
-  margin-bottom: 20px;
-}
-
 label {
   display: block;
   margin-bottom: 5px;
@@ -103,12 +99,77 @@ label {
   align-items: center; /* Centers vertically if needed */
   height: 100px; /* Adjust the height as needed */
 }
+/*
+Sign up Styles
+*/
 
+/* This will apply to all form groups, adding spacing at the bottom */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* This will style each input within the form groups */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%; /* Makes input take full width of its parent */
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Center the form both vertically and horizontally */
 .container-signup{
   display: flex;
   justify-content: center; /* Centers horizontally */
-
+  align-items: center; /* Centers vertically */
+  min-height: 100vh; /* At least full height of the viewport */
+  flex-direction: column; /* Stack children vertically */
+  padding: 20px;
 }
+
+/* Style the form itself */
+.container-signup form {
+  width: 90%; /* Responsive width */
+  max-width: 400px; /* Maximum width of the form */
+  margin: auto; /* Centers the form in the available space */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+}
+
+/* Enhance the visual feedback on hover and focus */
+.form-group input[type="text"]:hover,
+.form-group input[type="email"]:hover,
+.form-group input[type="date"]:hover,
+.form-group select:hover,
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="date"]:focus,
+.form-group select:focus {
+  border-color: #097969;
+  box-shadow: 0 0 8px 0 rgba(9, 121, 105, 0.2);
+}
+
+/* Style the submit button to match your form */
+.container-signup form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #097969;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.container-signup form button:hover {
+  background-color: #065a5a;
+}
+
 label[for="username"],
 label[for="password"]{
   display: block;
