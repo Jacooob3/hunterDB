@@ -17,7 +17,7 @@
 										<li class="fa fa-home"></li><a href="index.php">Home</a><br>
 										<li class="fa fa-globe"></li><a href="about.php">About</a><br>
 										<li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
-										<li class="fa fa-globe"></li><a href="login.php">Account</a><br>
+										<li class="fa fa-globe"></li><a href="account.php">Account</a><br>
 									</ul>						
 								</div>
 							</section>
