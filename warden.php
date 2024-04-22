@@ -59,10 +59,36 @@
 
 <html>
     <?php include 'includes/head.php';?>
-    <body>
-        <?php include 'includes/header.php';?>
- 		<main>
-			<div class="about-container">
+    <body >
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Panel (Sidebar) -->
+            <section class="panel color6">
+                <div class="span-1">
+                    <ul class="contact-icons" style="margin-left: 20px; color: black;">
+                        <li class="fa fa-home"></li><a href="index.php">Home</a><br>
+                        <li class="fa fa-globe"></li><a href="about.php">About</a><br>
+                        <li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
+                        <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
+                        <li class="fa fa-globe"></li><a href="login.php">Login</a><br>
+                        <li class="fa fa-globe"></li><a href="signup.php">Sign Up</a><br>
+                        <li class="fa fa-globe"></li><a href="warden.php">Warden</a><br>
+                    </ul>
+                </div>
+            </section>
+
+
+
+            <!-- Panel -->
+            <section class="panel color2-alt">
+
+                <div class="inner columns aligned">
+                    <div class="span-4-5">
+                        <h3 class="major">Form</h3>
+
 				<h1>WARDEN REGISTER EVENT</h1>
 				<hr />
                 <form action="logkillevent.php" method="GET">
@@ -77,7 +103,7 @@
                     </div>
                     <div>
                         <label for="hunter_id">Hunter ID</label>                        
-                        <select name="hunter_id" id="hunter_id"/>
+                        <select name="hunter_id" id="hunter_id">
                             <option selected="selected" disabled="disabled">Select a hunter</option>
                             <?php foreach ($hunter_dropdown as $row): ?>
                                 <option value=<?=$row["hunter_id"]?>><?=$row["hunter_name"]?></option>
@@ -146,7 +172,16 @@
                     </div>
                 </form>
 
+
+
             </div>
-		</main>
-	</body>
+		        </div>
+            </section>
+            <!-- Scripts -->
+            <script src="assets/js/jquery.min.js"></script>
+            <script src="assets/js/browser.min.js"></script>
+            <script src="assets/js/breakpoints.min.js"></script>
+            <script src="assets/js/main.js"></script>
+
+    </body>
 </html>
