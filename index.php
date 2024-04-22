@@ -1,14 +1,13 @@
 <?php
-	require 'includes/database-connection.php';
-	
-	// Fetch recent hunting activities
-	try {
-		$stmt = $pdo->query("SELECT CONCAT(h.fname, ' ', h.lname) AS hunterName, a.animal_name AS animalName, w.weapon_type AS weaponName, hk.date_time, hk.weight, hk.gender FROM hunter_kill hk JOIN hunter h ON h.hunter_id = hk.hunter_id JOIN animal a ON a.animal_id = hk.animal_id JOIN weapon w ON w.weapon_id = hk.weapon_id ORDER BY hk.date_time DESC LIMIT 10");
-		$recentHunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
-	} catch (PDOException $e) {
-		echo "Error: " . $e->getMessage();
-	}
-
+    require 'includes/database-connection.php';
+    
+    // Fetch recent hunting activities
+    try {
+        $stmt = $pdo->query("SELECT CONCAT(h.fname, ' ', h.lname) AS hunterName, a.animal_name AS animalName, w.weapon_type AS weaponName, hk.date_time AS time, hk.state_id AS state, hk.weight, hk.gender FROM hunter_kill hk JOIN hunter h ON h.hunter_id = hk.hunter_id JOIN animal a ON a.animal_id = hk.animal_id JOIN weapon w ON w.weapon_id = hk.weapon_id ORDER BY hk.date_time DESC LIMIT 10");
+        $recentHunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error: " . $e->getMessage();
+    }
 ?>
 
 <!DOCTYPE>
@@ -63,47 +62,75 @@
 
 						<!-- Panel (Navigation) -->
 						<section class="panel spotlight medium left">
-								<div class="intro joined">
+							<div class="inner columns divided">
+								<div class="span-5">
 									<h2 class="major">Database Resource</h2>
 									<p>Cross reference our catalog of database information to ensure you abide by all state laws.</p>
 								</div>
-								<div class="inner">
-									<ul class="grid-icons three connected" style="margin-left: 40px;">
-										<li><span class="icon solid fa-tree"><span class="label">State</span></span></li>
-										<li><span class="icon solid fa-paw"><span class="label">Animal</span></span></li>
-										<li><span class="icon solid fa-bullseye"><span class="label">Weapon</span></span></li>
-									</ul>
+
+								<div class="span-50">
+										<ul class="contact-icons color">
+											<li class="icon solid fa-tree"><a href="#">Track local hunting zones</a></li>
+											<li class="icon solid fa-paw"><a href="#">Register your quarry</a></li>
+											<li class="icon solid fa-bullseye"><a href="#">Check weapon legality</a></li>
+											<li class="icon solid fa-flag-usa"><a href="#">Compare state laws</a></li>
+										</ul>
+									</div>
 								</div>
+
 								<div class="image filtered tinted" data-position="top left">
 									<img src="images/huntStare.png" alt="" />
 								</div>
+
 							</section>
 
-				</div>
-			</div>
-			
-						<!-- Panel (Spotlight) -->
-						<section class="panel spotlight medium left">
-								<div class="content span-7">
-									<aside class="recent-hunts">
-										<h3>Recent Hunts</h3>
-										<ul>
-											<?php foreach ($recentHunts as $hunt): ?>
-												<li>
-													<strong>Hunter:</strong> <?= htmlspecialchars($hunt['hunterName']) ?><br>
-													<strong>Animal:</strong> <?= htmlspecialchars($hunt['animalName']) ?><br>
-													<strong>Weapon:</strong> <?= htmlspecialchars($hunt['weaponName']) ?><br>
-													<strong>Info:</strong> <?= htmlspecialchars($hunt['additional_info']) ?>
-												</li>
-											<?php endforeach; ?>
-										</ul>
-									</aside>
+							<!-- Panel (Live Hunt) -->
+							<section class="panel spotlight medium left">
+								<div class="inner columns">
+								<div class="span-1">
+									<h2 class="major">Recent Hunts</h2>
 								</div>
-						</section>
+									<div class="table-wrapper">
+										<table>
+											<thead>
+												<tr>
+													<th>Hunter</th>
+													<th>Animal</th>
+													<th>Weapon</th>
+													<th>Time</th>
+													<th>State</th>
+												</tr>
+											</thead>
+											<tbody>
+												<?php 
+												$count = 0;
+												foreach ($recentHunts as $hunt): 
+													if($count >= 8) break; // Only display the 8 most recent hunts
+												?>
+												<tr>
+													<td><?= htmlspecialchars($hunt['hunterName']) ?></td>
+													<td><?= htmlspecialchars($hunt['animalName']) ?></td>
+													<td><?= htmlspecialchars($hunt['weaponName']) ?></td>
+													<td><?= htmlspecialchars($hunt['time']) ?></td>
+													<td><?= htmlspecialchars($hunt['state']) ?></td>
+												</tr>
+												<?php 
+													$count++;
+												endforeach; 
+												?>
+											</tbody>
+										</table>
+									</div>
+								</div>
 
+								<div class="image filtered tinted" data-position="top left">
+									<img src="images/huntGreen.png" alt="" />
+								</div>
 
+							</section>
 
-
+			</div>
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
