@@ -37,7 +37,8 @@
 						<!-- Panel (Landing) -->
 							<section class="panel banner right">
 								<div class="content color0 span-3-75">
-									<h1 class="major">huntDB</h1>
+										<img src="images/HDBlogo.png" alt="hUNTDB" />
+									<h1 class="major"></h1>
 									<p>Welcome to <strong>huntDB</strong>, a free, comprehensive resource to catalog hunting data. Dive into the  insights and resources we have available for you to curate your next great hunt.</p>
 								</div>
 								<div class="image filtered tinted span-1-75" data-position="25% 25%">
