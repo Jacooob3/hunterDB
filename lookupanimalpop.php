@@ -3,6 +3,7 @@
     <body>
         <?php include 'includes/header.php';?>
         <center>
+            <main>
             <h2>POPULATION</h2>
             <h2>Find Animal Populations by State
                 <form action='liststateanimalpop.php' method='get'>
@@ -20,6 +21,7 @@
                     </form>
                 </h2>
             </div>
+        </main>
         <center>						 
     </body>
 </html>

@@ -29,6 +29,7 @@
         <body>
             <?php include 'includes/header.php';?>        
             <center>
+                <main>
                 <h2>Search Results for <?php echo $searchstate ?> </h2>
                 <table>
 <?php 
@@ -59,7 +60,9 @@
 ?>
                     </th>
             </table>
+                </main>
         </center>
+
     </body>
 </html>
 
