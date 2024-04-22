@@ -80,26 +80,21 @@
                         </div>
                 </section>
 
-					<!-- Panel (Sidebar) -->
-                    <section class="panel color3">
-							<div class="span-1">
-									<ul class="contact-icons" style="margin-left: 20px; color: black;">
-										<li class="fa fa-globe"></li><a href="warden.php">Warden Registry</a><br>
-										<li class="fa fa-home"></li><a href="logkillevent.php">Log Kill</a><br>
-										<li class="fa fa-globe"></li><a href="logpopevent.php">Log Population</a><br>
-									</ul>					
-								</div>
-						</section>
+                <!-- Panel (Sidebar) -->
+                <section class="panel color3">
+                    <div class="span-1">
+                            <ul class="contact-icons" style="margin-left: 20px; color: black;">
+                                <li class="fa fa-globe"></li><a href="warden.php">Warden Registry</a><br>
+                            </ul>					
+                        </div>
+                </section>
 
             <!-- Panel -->
             <section class="panel color2-alt">
 
                 <div class="inner columns aligned">
                     <div class="span-4-5">
-                        <h3 class="major">Form</h3>
-
-				<h1>WARDEN REGISTER EVENT</h1>
-				<hr />
+                        <h3 class="major">Warden Registry</h3>
                 <form action="logkillevent.php" method="GET">
                     <div>
                         <label for="warden_ID">Warden</label>
