@@ -39,10 +39,6 @@
 								<div class="content color0 span-3-75">
 									<h1 class="major">huntDB</h1>
 									<p>Welcome to <strong>huntDB</strong>, a free, comprehensive resource to catalog hunting data. Dive into the  insights and resources we have available for you to curate your next great hunt.</p>
-									<div class="buttons">
-										<a href="lookuphunter.php" class="button">Look Up Hunter   </a>
-										<a href="lookupanimalpop.php" class="button">Look Up Animal Population   </a>
-									</div>
 								</div>
 								<div class="image filtered tinted span-1-75" data-position="25% 25%">
 									<img src="images/huntTall.png" alt="" />
