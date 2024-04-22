@@ -17,6 +17,7 @@
 										<li class="fa fa-home"></li><a href="index.php">Home</a><br>
 										<li class="fa fa-globe"></li><a href="about.php">About</a><br>
 										<li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
+                                        <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
 										<li class="fa fa-globe"></li><a href="account.php">Account</a><br>
 									</ul>						
 								</div>
@@ -25,11 +26,9 @@
 						<!-- Panel -->
 						<section class="panel color2-alt">
 								<div class="intro color2">
-									<h2 class="major">asdsadas</h2>
-                                    <a href="listanimalpop.php" class="button">Animal Pop</a>
-                                    <a href="displayhunter.php" class="button">Display Hunter</a>
-									<a href="lookupanimalpop.php" class="button">Look Up Animal Pop</a>
-                                    <a href="lookuphunter.php" class="button">Look Up Hunter</a>
+									<h2 class="major">Elements</h2>
+                                    <a href="logkillevent.php" class="button">Log Kill Event</a>
+                                    <a href="logpopevent.php" class="button">Log Pop Event</a>
 								</div>
 								<div class="inner columns aligned">
 									<div class="span-4-5">
