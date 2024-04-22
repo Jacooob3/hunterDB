@@ -3,7 +3,7 @@
     
     // Fetch recent hunting activities
     try {
-        $stmt = $pdo->query("SELECT CONCAT(h.fname, ' ', h.lname) AS hunterName, a.animal_name AS animalName, w.weapon_type AS weaponName, hk.date_time AS time, hk.state_id AS state, hk.weight, hk.gender FROM hunter_kill hk JOIN hunter h ON h.hunter_id = hk.hunter_id JOIN animal a ON a.animal_id = hk.animal_id JOIN weapon w ON w.weapon_id = hk.weapon_id ORDER BY hk.date_time DESC LIMIT 10");
+        $stmt = $pdo->query("SELECT CONCAT(h.fname, ' ', h.lname) AS hunterName, a.animal_name AS animalName, w.weapon_type AS weaponName, hk.date_time AS time, hk.state_id AS state, hk.weight AS weight, hk.gender FROM hunter_kill hk JOIN hunter h ON h.hunter_id = hk.hunter_id JOIN animal a ON a.animal_id = hk.animal_id JOIN weapon w ON w.weapon_id = hk.weapon_id ORDER BY hk.date_time DESC LIMIT 10");
         $recentHunts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -110,6 +110,7 @@
 												<tr>
 													<td><?= htmlspecialchars($hunt['hunterName']) ?></td>
 													<td><?= htmlspecialchars($hunt['animalName']) ?></td>
+													<td><?= htmlspecialchars($hunt['weight']) ?></td>
 													<td><?= htmlspecialchars($hunt['weaponName']) ?></td>
 													<td><?= htmlspecialchars($hunt['time']) ?></td>
 													<td><?= htmlspecialchars($hunt['state']) ?></td>
