@@ -96,6 +96,7 @@
 												<tr>
 													<th>Hunter</th>
 													<th>Animal</th>
+													<th>Weight</th>
 													<th>Weapon</th>
 													<th>Time</th>
 													<th>State</th>
