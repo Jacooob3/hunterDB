@@ -87,6 +87,9 @@ nav ul li a:active {
 label {
   display: block;
   margin-bottom: 5px;
+  font-size: 20px;
+
+
 }
 .container-login{
   display: flex;
@@ -101,6 +104,9 @@ Sign up Styles
 /* This will apply to all form groups, adding spacing at the bottom */
 .form-group {
   margin-bottom: 20px;
+  margin-right: 15px;
+  border-radius: 5px;
+
 }
 
 .container-signup{
@@ -124,6 +130,7 @@ Sign up Styles
 .form-group select:focus {
   border-color: #097969;
   box-shadow: 0 0 8px 0 rgba(9, 121, 105, 0.2);
+  border-radius: 10px;
 }
 
 /* Style the submit button to match your form */
@@ -201,19 +208,23 @@ button:hover {
 
 .about-container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border: 3px outset #ccc;
+  border-radius: 5px;
+  background: transparent;
+  backdrop-filter: blur(8px);
 }
 
 .about-container p {
   margin-top: 10px;
   margin-bottom: 10px;
   font-family: sans-serif;
-  color: darkgrey;
+  color: black;
   text-align: justify;
 }
 
@@ -238,4 +249,45 @@ Welcome Page/index.php
 
 .welcome p{
   font-size: 18px;
+}
+
+body{
+  overflow: scroll;
+}
+
+.uPass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.signupName{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.selectForm{
+justify-content: center;
+  display: flex;
+
+}
+
+
+
+body{
+  background-image: url(../imgs/forestbackground.jpg) ;
+  background-size: cover;
+  background-position: center;
+  min-height: 400px;
+
+}
+
+select{
+  font-size: 20px
+}
+
+input{
+  font-size: 20px;
 }

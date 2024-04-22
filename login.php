@@ -8,6 +8,7 @@
     <body>
         <?php include 'includes/header.php';?>
         <center>
+            <main>
             <h2>Warden Login</h2>
             <h2>Enter Warden Email and Password
                 <form action='' method='post'>
@@ -26,6 +27,7 @@
                         header( 'Location: ./postlogin.php' );
                     }
                 ?>
+            </main>
         <center>						 
     </body>
 </html>

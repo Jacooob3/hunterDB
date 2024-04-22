@@ -1,6 +1,7 @@
 <?php
     require 'includes/database-connection.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -13,17 +14,32 @@
 </head>
 <body>
     <?php include 'includes/header.php'; ?>
+    <main>
     <div class="about-container">
+
+
         <h2>Sign Up</h2>
+
+        <br>
+
+
+
         <form action="signup-process.php" method="POST">
+
+            <!--User and Password-->
+            <div class = "uPass">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" name="username" id="username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" name="password" id="password" required>
+                <input type="text" name="password" id="password" required>
             </div>
+            </div>
+
+            <!--Name-->
+            <div class ="signupName">
             <div class="form-group">
                 <label for="firstname">First Name:</label>
                 <input type="text" name="firstname" id="firstname" required>
@@ -32,10 +48,20 @@
                 <label for="lastname">Last Name:</label>
                 <input type="text" name="lastname" id="lastname" required>
             </div>
+            </div>
+
+            <!--Forms selection-->
+
+            <!--Birthday-->
+
+            <div class = "selectForm">
+
             <div class="form-group">
                 <label for="dob">Date of Birth:</label>
                 <input type="date" name="dob" id="dob" required>
             </div>
+
+
             <div class="form-group">
                 <label for="gender">Gender:</label>
                 <select name="gender" id="gender" required>
@@ -51,6 +77,10 @@
                     <option value="RI">Rhode Island</option>
                 </select>
             </div>
+
+            </div>
+
+            <!--Hunter Info-->
             <div class="form-group">
                 <label for="license_number">License Number:</label>
                 <input type="text" name="license_number" id="license_number" required>
@@ -77,5 +107,6 @@
             <button type="submit">Sign Up</button>
         </form>
     </div>
+    </main>
 </body>
 </html>

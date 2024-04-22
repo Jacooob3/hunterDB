@@ -22,6 +22,7 @@
     <body>
         <?php include 'includes/header.php';?>
         <center>
+            <main>
             <h2>Warden POST Login</h2>
             <?php echo $email; ?>
             <hr>
@@ -43,6 +44,7 @@
                     echo 'username password not valid'; 
                 }
             ?>
+            </main>
         <center>						 
     </body>
 </html>
