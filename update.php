@@ -11,17 +11,17 @@
 					<div id="wrapper">
 
 						<!-- Panel (Sidebar) -->
-						<section class="panel color2">
+						<section class="panel color6">
 								<div class="span-1">
-									<ul class="contact-icons color2" style="margin-left: 20px;">
-										<li class="fa fa-home"></li><a href="index.php">Home</a><br>
-										<li class="fa fa-globe"></li><a href="about.php">About</a><br>
-										<li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
-                                        <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
-										<li class="fa fa-globe"></li><a href="account.php">Account</a><br>
-									</ul>						
+									<ul class="contact-icons" style="margin-left: 20px; color: black;">
+										<li class="fa fa-home"></li><a href="index.php" style="color: black;">Home</a><br>
+										<li class="fa fa-globe"></li><a href="about.php" style="color: black;">About</a><br>
+										<li class="fa fa-cogs"></li><a href="lookup.php" style="color: black;">Lookup</a><br>
+										<li class="fa fa-cogs"></li><a href="update.php" style="color: black;">Update</a><br>
+										<li class="fa fa-globe"></li><a href="account.php" style="color: black;">Account</a><br>
+									</ul>					
 								</div>
-							</section>
+						</section>
 
 						<!-- Panel -->
 						<section class="panel color2-alt">
