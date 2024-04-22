@@ -35,15 +35,7 @@
 									</ul>					
 								</div>
 						</section>
-
-						<!-- Panel -->
-						<section class="panel color2-alt">
-								<div class="inner columns aligned">
-									<div class="span-4-5">
-										<h3 class="major">Profile</h3>
-									</div>
-								</div>
-							</section>			
+	
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>

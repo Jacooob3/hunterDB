@@ -25,24 +25,17 @@
                         </div>
                 </section>
 						
-						<!-- Panel (Sidebar) -->
-						<section class="panel color3">
-								<div class="span-1">
-									<ul class="contact-icons" style="margin-left: 20px; color: black;">
-										<li class="fa fa-home"></li><a href="lookupanimalpop.php">Look Up Animal Population</a><br>
-										<li class="fa fa-globe"></li><a href="lookuphunter.php">Look Up Hunter</a><br>
-									</ul>					
-								</div>
-						</section>
+				<!-- Panel (Sidebar) -->
+				<section class="panel color3">
+						<div class="span-1">
+							<ul class="contact-icons" style="margin-left: 20px; color: black;">
+								<li class="fa fa-home"></li><a href="lookupanimalpop.php">Look Up Animal Population</a><br>
+								<li class="fa fa-globe"></li><a href="lookuphunter.php">Look Up Hunter</a><br>
+							</ul>					
+						</div>
+				</section>
 
-						<!-- Panel -->
-						<section class="panel color2-alt">
-								<div class="inner columns aligned">
-									<div class="span-4-5">
-										<h3 class="major">Profile</h3>
-									</div>
-								</div>
-							</section>			
+	
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/browser.min.js"></script>
