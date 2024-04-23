@@ -1,11 +1,13 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 require 'includes/database-connection.php';
 
 // Check login credentials directly from POST data, not from session
 if (!isset($_POST['email']) || !isset($_POST['password'])) {
     $_SESSION['error'] = 'Please enter email and password';
-    header('Location: login.php');
+    header('Location: http://yourdomain.com/login.php');
     exit;
 }
 
@@ -24,12 +26,12 @@ if ($user && password_verify($pass, $user['pass'])) {
     $_SESSION['warden_id'] = $user['warden_id'];
 
     // Redirect to update page or dashboard
-    header('Location: ./update.php');
+    header('Location: http://yourdomain.com/update.php');
     exit;
 } else {
     // Invalid credentials
     $_SESSION['error'] = 'Invalid username or password';
-    header('Location: login.php');
+    header('Location: http://yourdomain.com/login.php');
     exit;
 }
 ?>
