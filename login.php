@@ -34,7 +34,7 @@
                 <div class="inner columns aligned">
                     <div class="span-4-5">
                         <h3 class="major">Warden Log-In</h3>
-                        <form method="post" action="postlogin.php">
+                        <form action="postlogin.php" method="POST" >
                             <div class="fields">
                                 <div class="field">
                                     <label for="email">Email</label>
