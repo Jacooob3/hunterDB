@@ -1,4 +1,7 @@
-<?php require 'includes/database-connection.php';?> 
+<?php 
+session_start();
+require 'includes/database-connection.php';
+?> 
 
 <!DOCTYPE>
 <html>
@@ -18,11 +21,17 @@
 										<li class="fa fa-home"></li><a href="index.php">Home</a><br>
 										<li class="fa fa-address-card"></li><a href="about.php">About</a><br>
 										<li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
-										<li class="fa fa-tag"></li><a href="update.php">Warden</a><br>
-										<li class="fa fa-user"></li><a href="account.php">Account</a><br>
-										<li class="fa fa-user-lock"></li><a href="login.php">Login</a><br>
-										<li class="fa fa-user-plus"></li><a href="signup.php">Sign Up</a><br>
-									</ul>					
+										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+											<?php if ($_SESSION['role'] == 'warden'): ?>
+												<li class="fa fa-tag"></li><a href="update.php">Warden</a><br>
+											<?php endif; ?>
+											<li class="fa fa-user"></li><a href="account.php">Account</a><br>
+											<li class="fa fa-user-lock"></li><a href="logout.php">Logout</a><br>
+										<?php else: ?>
+											<li class="fa fa-user-lock"></li><a href="login.php">Login</a><br>
+											<li class="fa fa-user-plus"></li><a href="signup.php">Sign Up</a><br>
+										<?php endif; ?>
+									</ul>  					
 								</div>
 						</section>
 							

@@ -18,9 +18,6 @@
 									<ul class="contact-icons" style="margin-left: 20px; color: black;">
 										<li class="fa fa-home"></li><a href="index.php">Home</a><br>
 										<li class="fa fa-address-card"></li><a href="about.php">About</a><br>
-										<li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
-										<li class="fa fa-tag"></li><a href="update.php">Warden</a><br>
-										<li class="fa fa-user"></li><a href="account.php">Account</a><br>
 										<li class="fa fa-user-lock"></li><a href="login.php">Login</a><br>
 										<li class="fa fa-user-plus"></li><a href="signup.php">Sign Up</a><br>
 									</ul>					
