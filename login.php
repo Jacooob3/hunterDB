@@ -54,7 +54,7 @@
                                 $_SESSION['email'] = $_POST['email'];
                                 $_SESSION['password'] = $_POST['password'];
                                 echo $_SESSION['email'];
-                                header( 'Location: ./postlogin.php' );
+                                header( 'Location: ./postxxx.php' );
                             }
                         ?>
                     </div>
