@@ -55,7 +55,6 @@
                                 $_SESSION['password'] = $_POST['password'];
                                 echo $_SESSION['email'];
 				header( 'Location:postlogin.php' );
-				exit();
                             }
                         ?>
                     </div>
