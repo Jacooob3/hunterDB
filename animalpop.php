@@ -48,12 +48,13 @@
 
             <!-- Panel (Sidebar) -->
             <section class="panel color3">
-                <div class="span-1">
-                    <ul class="contact-icons" style="margin-left: 20px; color: black;">
-                        <li class="fa fa-globe"></li><a href="warden.php">Registry</a><br>
-                    </ul>
-                </div>
-            </section>
+            <div class="span-1">
+                            <ul class="contact-icons" style="margin-left: 20px; color: black;">
+                                <li class="fa fa-globe"></li><a href="warden.php">Registry</a><br>
+								<li class="fa fa-globe"></li><a href="animalpop.php">Animal</a><br>
+                            </ul>					
+                        </div>
+                </section>
 
             <!-- Panel -->
             <section class="panel color0">
@@ -62,13 +63,12 @@
                     <div class="span-4-5">
  		<main>
 			<div class="about-container">
-				<h1>WARDEN POPULATION UPDATE</h1>
-				<hr />
+                <h3 class="major">Animal Population Update</h3>
                 <form action="logpopevent.php" method="GET">
                     <div>
                         <label for="animal_id">Animal</label>
                         <select name="animal_id" id="animal_id">
-                            <option selected="selected" disabled="disabled">Select a animal</option>
+                            <option selected="selected" disabled="disabled">Select an animal</option>
                             <?php foreach ($animal_dropdown as $row): ?>
                                 <option value=<?=$row["animal_id"]?>><?=$row["animal_name"]?></option>
                             <?php endforeach ?>
@@ -84,7 +84,7 @@
                         </select>
                     </div>
                     <div>
-                        <label for="New Population">population</label>
+                        <label for="New Population">Population</label>
                         <input name="population" id="population" required style="color: black;" >
                     </div>
                     <br>
