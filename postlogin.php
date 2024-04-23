@@ -16,7 +16,9 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user && password_verify($pass, $user['pass'])) {
     // Successful login
-    $_SESSION['warden_id'] = $user['warden_id'];
+    $_SESSION['logged_in'] = true;
+    $_SESSION['role'] = 'warden';
+    $_SESSION['id'] = $user['warden_id'];
     $redirectUrl = 'update.php';
     $message = "Login successful. Redirecting to update page...";
 } else {
@@ -39,13 +41,17 @@ if ($user && password_verify($pass, $user['pass'])) {
             <section class="panel color6">
                 <div class="span-1">
                     <ul class="contact-icons" style="margin-left: 20px; color: black;">
-                        <li class="fa fa-home"></li><a href="index.php">Home</a><br>
-                        <li class="fa fa-globe"></li><a href="about.php">About</a><br>
-                        <li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
-                        <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
-                        <li class="fa fa-globe"></li><a href="account.php">Account</a><br>
-                        <li class="fa fa-globe"></li><a href="login.php">Login</a><br>
-                        <li class="fa fa-globe"></li><a href="signup.php">Sign Up</a><br>
+                    <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+                        <li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
+                        <?php if ($_SESSION['role'] == 'warden'): ?>
+                            <li class="fa fa-tag"></li><a href="update.php">Warden</a><br>
+                        <?php endif; ?>
+                        <li class="fa fa-user"></li><a href="account.php">Account</a><br>
+                        <li class="fa fa-user-lock"></li><a href="logout.php">Logout</a><br>
+                    <?php else: ?>
+                        <li class="fa fa-user-lock"></li><a href="login.php">Login</a><br>
+                        <li class="fa fa-user-plus"></li><a href="signup.php">Sign Up</a><br>
+                    <?php endif; ?>
                     </ul>                 
                 </div>
             </section>
