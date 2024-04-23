@@ -27,37 +27,7 @@
                         </div>
                 </section>
 						
-                <!-- Panel -->
-                <section class="panel color2-alt">
-                    <div class="inner columns aligned">
-                        <div class="span-4-5">
-                            <h3 class="major">Hunter Log-In</h3>
-                            <form method="post" action="">
-                                <div class="fields">
-                                    <div class="field">
-                                        <label for="email">Email</label>
-                                        <input type="email" name="email" id="email" value="" placeholder="john@untitled.tld" />
-                                    </div>
-                                    <div class="field">
-                                        <label for="password">Password</label>
-                                        <input type="password" name="password" id="password" value="" />
-                                    </div>
-                                </div>
-                                <ul class="actions">
-                                    <li><input type="submit" value="Log In" name="Login" class="primary color2" /></li>
-                                </ul>
-                            </form>
-                            <?php
-                                if (isset($_POST['Login'])) {
-                                    $_SESSION['email'] = $_POST['email'];
-                                    $_SESSION['password'] = $_POST['password'];
-                                    echo $_SESSION['email'];
-                                    header( 'Location: ./postlogin.php' );
-                                }
-                            ?>
-                        </div>
-                    </div>
-                </section>
+                
 
                 <!-- Panel -->
                 <section class="panel color1-alt">
