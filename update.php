@@ -36,7 +36,7 @@
                 </section>
 
 				<!-- Panel -->
-				<section class="panel color2-alt">
+				<section class="panel color0">
 						<div class="inner columns aligned">
 							<div class="span-4-5">
 								<h3 class="major">Update</h3>
