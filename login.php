@@ -56,6 +56,7 @@
                                 //echo $_SESSION['email'];
 				flush();
                                 header( 'Location:postlogin.php' );
+				exit();
                             }
                         ?>
                     </div>
