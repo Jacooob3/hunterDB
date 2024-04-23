@@ -30,37 +30,36 @@
 					</div>
 			</section>
 
-            <center>
-                <!-- Panel -->
-                <section class="panel color2-alt">
-
-                    <div class="inner columns aligned">
-                        <div class="span-4-5">
-            <h2>POPULATION</h2>
-            <h2>Find Animal Populations by State
-                <form action='liststateanimalpop.php' method='get'>
-                    <input type ='text' name='state'>
-                    <input type='submit' value='Search'>
-                </form>
-            </h2>
-            <div class="order-lookup-container">
-                <h2>Find Populations by Animal Name</h2>
-                    <form action='listanimalpop.php' method='get'>
-                        <div class="form-group">
-                                <input type ='text' name='animalidname'>
-                                <input type='submit' value='Search'>
+            <!-- Panel -->
+            <section class="panel color2-alt">
+                <div class="inner columns aligned">
+                    <div class="span-4-5">
+                        <form method="post" action="">
+                            <h3 class="major">Find Animal Populations </h3>
+                            <div class="fields">
+                                    <div class="field half">
+                                        <form action='liststateanimalpop.php' method='get'>
+                                            <label for="searchtext">Find Animal Populations by State</label>
+                                            <input type ='text' name='state'>
+                                            <br>
+                                            <input type='submit' value='Search'>
+                                        </form>
+                                    </div>
+                                </div>
+                                <div class="fields">
+                                    <div class="field half">
+                                        <form action='listanimalpop.php' method='get'>
+                                            <label for="searchtext">Find Animal Populations by Name</label>
+                                            <input type ='text' name='animalidname'>
+                                            <br>
+                                            <input type='submit' value='Search'>
+                                        </form>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </h2>
-
-
+                </section>
+            </div>
         </div>
-        </section>
-            </center>
-    </div>
-    </div>
-
-
-
     </body>
 </html>
