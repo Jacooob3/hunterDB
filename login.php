@@ -53,8 +53,9 @@
                             if (isset($_POST['Login'])) {
                                 $_SESSION['email'] = $_POST['email'];
                                 $_SESSION['password'] = $_POST['password'];
-                                echo $_SESSION['email'];
-                                header( 'Location: ./postlogin.php' );
+                                //echo $_SESSION['email'];
+				flush();
+                                header( 'Location:postlogin.php' );
                             }
                         ?>
                     </div>
