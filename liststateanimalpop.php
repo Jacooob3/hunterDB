@@ -52,7 +52,7 @@
                         <div class="inner columns aligned">
                             <div class="span-4-5">
             <center>
-                <h2>Search Results for <?php echo $searchstate ?> </h2>
+                <h3>Search Results for <?php echo $searchstate ?> </h3>
                 <table>
 <?php 
     // if there are no hunter display a message other wise poplate a table with hunter info

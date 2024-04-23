@@ -66,7 +66,7 @@
                     <div class="inner columns aligned">
                         <div class="span-4-5">
         <center>
-            <h2>Search Results for <?php echo $idname ?> </h2>
+            <h3>Search Results for <?php echo $idname ?> </h3>
             <table>
 <?php 
     if ($animal_info == null) { 
