@@ -34,7 +34,7 @@
                 <div class="inner columns aligned">
                     <div class="span-4-5">
                         <h3 class="major">Warden Log-In</h3>
-                        <form method="post" action="">
+                        <form method="post" action="postlogin.php">
                             <div class="fields">
                                 <div class="field">
                                     <label for="email">Email</label>
@@ -54,7 +54,8 @@
                                 $_SESSION['email'] = $_POST['email'];
                                 $_SESSION['password'] = $_POST['password'];
                                 echo $_SESSION['email'];
-				header( 'Location: ./postlogin.php' );
+				                header( 'Location: ./postlogin.php' );
+                                exit;
                             }
                         ?>
                     </div>
