@@ -36,14 +36,15 @@
                         </div>
                 </section>
 
-				<!-- Panel -->
-				<section class="panel color0">
-						<div class="inner columns aligned">
-							<div class="span-4-5">
-								<h3 class="major">Update</h3>
-							</div>
-						</div>
-				</section>			
+                <!-- Panel (Sidebar) -->
+                <section class="panel color3">
+				<div class="span-1">
+                            <ul class="contact-icons" style="margin-left: 20px; color: black;">
+                                <li class="fa fa-user-tag"></li><a href="warden.php">Registry</a><br>
+								<li class="fa fa-paw"></li><a href="animalpop.php">Animal</a><br>
+                            </ul>					
+                        </div>
+                </section>	
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
