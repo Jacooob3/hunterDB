@@ -9,7 +9,7 @@ if (!isset($_SESSION['email']) || !isset($_SESSION['password'])) {
 }
 
 $email = $_SESSION['email'];
-$pass = $_SESSION['password']; // This should not be stored in session ideally
+$pass = $_SESSION['password'];  // This should be obtained directly from POST and not stored in session
 
 // Prepare a statement for execution
 $stmt = $pdo->prepare("SELECT warden_id, pass FROM game_warden WHERE email = :email");
@@ -21,7 +21,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user && password_verify($pass, $user['pass'])) {
     // Successful login
     $_SESSION['warden_id'] = $user['warden_id'];
-    unset($_SESSION['password']); // It's a good practice to not store password in session
+    unset($_SESSION['password']); // Clearing password from session for security
 
     // Redirect to update page or dashboard
     header('Location: ./update.php');
@@ -33,6 +33,7 @@ if ($user && password_verify($pass, $user['pass'])) {
     exit;
 }
 ?>
+
 
 <html>
 	<?php include 'includes/head.php';?>
