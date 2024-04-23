@@ -24,7 +24,7 @@ if ($user && password_verify($pass, $user['pass'])) {
     $_SESSION['warden_id'] = $user['warden_id'];
 
     // Redirect to update page or dashboard
-    echo("Login successful")
+    header('Location: ./update.php');
     exit;
 } else {
     // Invalid credentials
