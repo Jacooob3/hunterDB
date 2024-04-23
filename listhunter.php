@@ -1,26 +1,27 @@
 <?php
     // searchhunter.php
-    // pages should be called with a url paramaeter as follows.  
+    // pages should be called with a url parameter as follows.  
     // http://localhost/toystore/searchhunter.php?searchtext=101
-	require 'includes/database-connection.php';
-    $searchtext=$_GET['searchtext'];  // seachtect is a url param from prior page it is used to find a hunter last name or number
+    require 'includes/database-connection.php';
+    $searchtext=$_GET['searchtext'];  // searchtext is a url param from prior page it is used to find a hunter last name or number
 
     // function get_hunter_info
     // $pdo     connection object
     // $id      string to search for
     // returns array of hunter info 
-	function get_hunter_info(PDO $pdo, string $id) {
-		$sql = "    SELECT 
-                            lname as name
+    function get_hunter_info(PDO $pdo, string $id) {
+        $sql = "    SELECT 
+                        fname as firstname,
+                        lname as lastname
                     FROM hunter
                     WHERE lname = :id1 OR hunter_id = :id2;";
         // substitute the variables 
-		$hunter = pdo($pdo, $sql, ['id1' => $id,'id2' => $id ])->fetchAll(PDO::FETCH_ASSOC);
+        $hunter = pdo($pdo, $sql, ['id1' => $id,'id2' => $id ])->fetchAll(PDO::FETCH_ASSOC);
         return $hunter; 
     }
 
     // upon loading the page call the function to get the info
-	$hunter_info = get_hunter_info($pdo, $searchtext);
+    $hunter_info = get_hunter_info($pdo, $searchtext);
 ?>
 
 <html>
@@ -30,21 +31,23 @@
     <div id="page-wrapper">
         <!-- Wrapper -->
         <div id="wrapper">
-            <!-- Panel (Sidebar) -->
-            <section class="panel color6">
-                <div class="span-1">
-                    <ul class="contact-icons" style="margin-left: 20px; color: black;">
-                        <li class="fa fa-home"></li><a href="index.php">Home</a><br>
-                        <li class="fa fa-globe"></li><a href="about.php">About</a><br>
-                        <li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
-                        <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
-                        <li class="fa fa-globe"></li><a href="login.php">Login</a><br>
-                        <li class="fa fa-globe"></li><a href="signup.php">Sign Up</a><br>
-                        <li class="fa fa-globe"></li><a href="warden.php">Warden</a><br>
-                    </ul>
-                </div>
-            </section>
+
+                <!-- Panel (Sidebar) -->
+                <section class="panel color6">
+                        <div class="span-1">
+                            <ul class="contact-icons" style="margin-left: 20px; color: black;">
+                                <li class="fa fa-home"></li><a href="index.php">Home</a><br>
+                                <li class="fa fa-globe"></li><a href="about.php">About</a><br>
+                                <li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
+                                <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
+                                <li class="fa fa-globe"></li><a href="account.php">Account</a><br>
+                                <li class="fa fa-globe"></li><a href="login.php">Login</a><br>
+                                <li class="fa fa-globe"></li><a href="signup.php">Sign Up</a><br>
+                            </ul>					
+                        </div>
+                </section>
             
+
 				<!-- Panel (Sidebar) -->
 				<section class="panel color3">
 						<div class="span-1">
@@ -54,6 +57,7 @@
 							</ul>					
 						</div>
 				</section>
+
 
             <center>
                 <!-- Panel -->
@@ -74,18 +78,19 @@
                 <tr>
                     <th>Name</td>
                 </tr>    
-<?php   
-        // loop through the $hunter_info displaying information for each hunter
-        // for now it will just display one hunere but if the select returned 
-        // multiple rows it would produce a listing of all the hunters
-        foreach ($hunter_info as $hunter_info) { 
-                echo '<td>';    
-                echo $hunter_info['name'];
-                echo '</td></tr>';
+                <?php   
+
+            // loop through the $hunter_info displaying information for each hunter
+            // for now it will just display one hunter but if the select returned 
+            // multiple rows it would produce a listing of all the hunters
+            foreach ($hunter_info as $hunter_info) { 
+                    echo '<td>';    
+                    echo $hunter_info['firstname'] . ' ' . $hunter_info['lastname'];
+                    echo '</td></tr>';
+            }
         }
-    } 
-?>
-                    </th>
+
+?>                    </th>
             </table>
                         </div>
                 </section>

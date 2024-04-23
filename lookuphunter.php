@@ -34,45 +34,39 @@
             <!-- Panel -->
             <section class="panel color2-alt">
                 <div class="inner columns aligned">
-                        <div class="span-4-5">
-                            <form method="post" action="">
-                            <h3 class="major">Find Hunter </h3>
-                                <div class="fields">
-                                    <div class="field half">
-                                        <form action='listhunter.php' method='get'>
-                                            <label for="searchtext">Search By Name</label>
-                                            <input type ='text' name='searchtext'>
-                                            <br>
-                                            <input type='submit' value='Search'>
-                                        </form>
-                                    </div>
-                                    <div class="field half">
-                                        <form action='displayhunter.php' method='get'>
-                                            <label for="searchtext">Search By ID</label>
-                                            <input type ='text' name='searchtext'>
-                                            <br>
-                                            <input type='submit' value='Search'>
-                                        </form>
-                                    </div>
-                                    <div class="field">
-                                    <h3 class="major">Find Hunter Kills</h3>
-                                    <form action='listhunterkills.php' method='get'>
-                                        <label for="searchtext">Find Kills By ID</label>
-                                        <input type ='text' name='searchtext'>
-                                        <br>
-                                        <input type='submit' value='Search'>
-                                        <br>
-                                        </form>
-                                    </div>
-                                </div>
-                            </form>
-                            
+                    <div class="span-4-5">
+                        <h3 class="major">Find Hunter </h3>
+                        <div class="fields">
+                            <div class="field half">
+                                <form action='listhunter.php' method='get'>
+                                    <label for="searchtext">Search By Name</label>
+                                    <input type ='text' name='searchtext'>
+                                    <br>
+                                    <input type='submit' value='Search'>
+                                </form>
+                            </div>
+                            <div class="field half">
+                                <form action='displayhunter.php' method='get'>
+                                    <label for="searchtext">Search By ID</label>
+                                    <input type ='text' name='searchtext'>
+                                    <br>
+                                    <input type='submit' value='Search'>
+                                </form>
+                            </div>
+                            <div class="field">
+                                <h3 class="major">Find Hunter Kills</h3>
+                                <form action='listhunterkills.php' method='get'>
+                                    <label for="searchtext">Find Kills By ID</label>
+                                    <input type ='text' name='searchtext'>
+                                    <br>
+                                    <input type='submit' value='Search'>
+                                    <br>
+                                </form>
+                            </div>
                         </div>
                     </div>
-
-                    </div>
-            </section>
-                    </div>
                 </div>
+            </section>
+        </div>
     </body>
 </html>
