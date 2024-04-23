@@ -31,7 +31,7 @@ if ($user && password_verify($pass, $user['pass'])) {
 <html>
 <head>
     <?php include 'includes/head.php';?>
-    <meta http-equiv="refresh" content="5;url=<?= $redirectUrl ?>">
+    <meta http-equiv="refresh" content="3;url=<?= $redirectUrl ?>">
 </head>
 <body class="is-preload">
     <div id="page-wrapper">
