@@ -36,8 +36,11 @@
                     // blank the password for security
                     $_SESSION['warden_id'] = $result['warden_id'];
                     $_SESSION['pass'] = ''; 
+                    // login is successfull, redirecting to update page
+                    // When account page is fixed, redirect to that
+                    header( 'Location: ./update.php' );
 
-
+                    
                     
                 } else {
                     echo 'username password not valid'; 
