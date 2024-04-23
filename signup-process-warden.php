@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo->beginTransaction();
 
         
-        $stmt = $pdo->prepare("INSERT INTO game_warden (warden_id, state_id, fname, lname, email, phonenum, pass) VALUES (?, ? , ?, ?, ?, ?, ?)");
+        $stmt = $pdo->prepare("INSERT INTO game_warden (warden_id, state_id, fname, lname, email, phone, pass) VALUES (?, ? , ?, ?, ?, ?, ?)");
         $stmt->execute([$warden_id, $state, $firstname, $lastname,  $email, $phone, $hashed_password]);
 
         $pdo->commit();
