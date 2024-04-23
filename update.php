@@ -26,25 +26,29 @@
 						</section>
 						
 
-                <!-- Panel (Sidebar) -->
-                <section class="panel color3">
-				<div class="span-1">
-                            <ul class="contact-icons" style="margin-left: 20px; color: black;">
-                                <li class="fa fa-globe"></li><a href="warden.php">Registry</a><br>
-								<li class="fa fa-globe"></li><a href="animalpop.php">Animal</a><br>
-                            </ul>					
-                        </div>
-                </section>
+
 
                 <!-- Panel (Sidebar) -->
                 <section class="panel color3">
 				<div class="span-1">
                             <ul class="contact-icons" style="margin-left: 20px; color: black;">
                                 <li class="fa fa-user-tag"></li><a href="warden.php">Registry</a><br>
-								<li class="fa fa-paw"></li><a href="animalpop.php">Animal</a><br>
+				<li class="fa fa-paw"></li><a href="animalpop.php">Animal</a><br>
                             </ul>					
                         </div>
                 </section>	
+
+			<!-- Panel (Spotlight) -->
+			<section class="panel spotlight medium left">
+					<div class="content span-7">
+						<h2 class="major">Warden Registry</h2>
+						<p>As a warden, work with hunters to update and track kills and ensure your local animal population remains healthy.</p>
+					</div>
+					<div class="image filtered tinted" data-position="top left">
+						<img src="images/huntSunset.png" alt="" />
+					</div>
+			</section>
+						
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
