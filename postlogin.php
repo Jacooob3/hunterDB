@@ -19,12 +19,12 @@ if ($user && password_verify($pass, $user['pass'])) {
     $_SESSION['warden_id'] = $user['warden_id'];
 
     // Redirect to update page or dashboard
-    header('Location: update.php');
+    header('Location: ./update.php');
     exit;
 } else {
     // Invalid credentials
     $_SESSION['error'] = 'Invalid username or password';
-    header('Location: login.php');
+    header('Location: ./login.php');
     exit;
 }
 ?>
