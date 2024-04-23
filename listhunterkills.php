@@ -58,12 +58,13 @@
                     <div class="inner columns aligned">
                         <div class="span-4-5">
         <center>
-            <h2>Search Results</h2>
+            <h3>Search Results</h3>
+
             <table>
 <?php 
     // if there is no hunter kill info display a message other wise poplate a table with hunter info
     if ($hunter_info == null) { 
-        echo ("<h3>Hunter has no kill info</h3>"); 
+        echo ("<h3>The hunter has no kill info</h3>"); 
     } else { 
 ?>
             <table border='1'>
@@ -74,8 +75,6 @@
                     <th>Weight</td>
                     <th>Zone</td>
                     <th>Date Time</td>
-
-
 
                 </tr>    
 <?php   
