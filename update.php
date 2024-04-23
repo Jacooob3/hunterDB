@@ -1,6 +1,6 @@
 <?php 
-require 'includes/database-connection.php';
 session_start();
+require 'includes/database-connection.php';
 
 ?> 
 
