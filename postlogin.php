@@ -17,15 +17,13 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
 if ($user && password_verify($pass, $user['pass'])) {
     // Successful login
     $_SESSION['warden_id'] = $user['warden_id'];
-
-    // Redirect to update page or dashboard
-    echo "Login successful. <a href='update.php'>Update Stuff here</a>"; 
-    exit;
+    $redirectUrl = 'update.php';
+    $message = "Login successful. Redirecting to update page...";
 } else {
     // Invalid credentials
     $_SESSION['error'] = 'Invalid username or password';
-    echo "Login Unsuccessful. <a href='login.php'>back to login here</a>";
-    exit;
+    $redirectUrl = 'login.php';
+    $message = "Login unsuccessful. Redirecting back to login page...";
 }
 ?>
 
@@ -54,7 +52,7 @@ if ($user && password_verify($pass, $user['pass'])) {
             <section class="panel color1-alt">
                 <div class="inner columns aligned">
                     <div class="span-4-5">
-                        <h2>Warden POST Login</h2>
+                        <h2><?= $message ?></h2>
                     </div>
                 </div>
             </section>
