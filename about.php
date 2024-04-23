@@ -27,7 +27,7 @@
 						</section>
 							
 						<!-- Panel -->
-						<section class="panel color2-alt">
+						<section class="panel color1-alt">
 								<div class="inner columns aligned">
 									<div class="span-3">
 										<h3 class="major">Introducing HuntDB</h3>
@@ -42,19 +42,13 @@
 									</div>
 
 								</section>
-									<!-- Panel -->
-									<section class="panel">
-											<div class="gallery">
-											<a href="images/gallery/fulls/04.jpg" class="image filtered span-2-5" data-position="top"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
-												<div class="group span-3">
-													<a href="images/gallery/fulls/01.jpg" class="image filtered span-3" data-position="bottom"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
-													<a href="images/gallery/fulls/02.jpg" class="image filtered span-1-5" data-position="center"><img src="images/gallery/thumbs/02.jpg" alt="" /></a>
-													<a href="images/gallery/fulls/03.jpg" class="image filtered span-1-5" data-position="bottom"><img src="images/gallery/thumbs/03.jpg" alt="" /></a>
-												</div>
-												<a href="images/gallery/fulls/04.jpg" class="image filtered span-2-5" data-position="top"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
-											</div>
-										</section>
-
+	
+						<!-- Panel (Spotlight) -->
+						<section class="panel color2-alt">
+								<div class="image filtered tinted span-1-75" data-position="25% 25%">
+									<img src="images/huntLake.png" alt="" />
+								</div>
+							</section>
 
 			</div>
 			
