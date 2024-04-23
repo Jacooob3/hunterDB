@@ -27,8 +27,6 @@
 				</div>
 		</section>
 		
-
-
                 <!-- Panel -->
                 <section class="panel color1-alt">
                 <div class="inner columns aligned">
