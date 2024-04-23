@@ -17,9 +17,11 @@ session_start();
 						<!-- Panel (Sidebar) -->
 						<section class="panel color6">
 							<div class="span-1">
-								<ul class="contact-icons" style="margin-left: 20px; color: black;">
+							<ul class="contact-icons" style="margin-left: 20px; color: black;">
+								<li class="fa fa-home"></li><a href="index.php">Home</a><br>
+								<li class="fa fa-address-card"></li><a href="about.php">About</a><br>
+								<li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
 								<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-									<li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
 									<?php if ($_SESSION['role'] == 'warden'): ?>
 										<li class="fa fa-tag"></li><a href="update.php">Warden</a><br>
 									<?php endif; ?>
@@ -29,7 +31,7 @@ session_start();
 									<li class="fa fa-user-lock"></li><a href="login.php">Login</a><br>
 									<li class="fa fa-user-plus"></li><a href="signup.php">Sign Up</a><br>
 								<?php endif; ?>
-								</ul>                 
+							</ul>                  
 							</div>
 						</section>
 						
