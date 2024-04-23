@@ -18,13 +18,13 @@
 						WHEN h.gender = 'M' THEN 'Male'
 						ELSE 'Unknown'
 						END AS gender,
-					h.email AS email
+					h.email AS email,
 					date_of_birth AS dob,
-					CONCAT (a.street, ' ', a.city, ', ', a.state, ' ', a.zip) AS add
+					CONCAT (a.street, ' ', a.city, ', ', a.state_id, ' ', a.zip) AS addr
 				FROM hunter h
-				JOIN address a ON (a.address_id = h.address_id)
-				WHERE h.hunter_id = :id;";	
-		$hunter = pdo($pdo, $sql, ['id' => $id])->fetch();
+				JOIN address a ON (a.address_id = h.address_id)				
+				WHERE h.lname = :id1 OR h.hunter_id = :id2;";
+		$hunter = pdo($pdo, $sql, ['id1' => $id,'id2' => $id ])->fetch();		
 		return $hunter;
 	}
 
@@ -78,7 +78,7 @@
 										<p><strong>Gender:</strong> <?= $hunter_info['gender']  ?></p>
 										<p><strong>Email:</strong> <?= $hunter_info['email']  ?></p>
 										<p><strong>Date of Brith:</strong> <?= $hunter_info['dob']  ?></p>
-										<p><strong>Address:</strong> <?= $hunter_info['add']  ?></p>						
+										<p><strong>Address:</strong> <?= $hunter_info['addr']  ?></p>						
 										<br />
 									</div>
 								</div>
