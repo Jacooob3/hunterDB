@@ -52,12 +52,11 @@
 				<section class="panel color3">
 						<div class="span-1">
 							<ul class="contact-icons" style="margin-left: 20px; color: black;">
-								<li class="fa fa-home"></li><a href="lookupanimalpop.php">Animal</a><br>
-								<li class="fa fa-globe"></li><a href="lookuphunter.php">Hunter</a><br>
+								<li class="fa fa-paw"></li><a href="lookupanimalpop.php">Animal</a><br>
+								<li class="fa fa-user"></li><a href="lookuphunter.php">Hunter</a><br>
 							</ul>					
 						</div>
 				</section>
-
 
             <center>
                 <!-- Panel -->
