@@ -49,15 +49,7 @@
                                 <li><input type="submit" value="Log In" name="Login" class="primary color2" /></li>
                             </ul>
                         </form>
-                        <?php
-                            if (isset($_POST['Login'])) {
-                                $_SESSION['email'] = $_POST['email'];
-                                $_SESSION['password'] = $_POST['password'];
-                                echo $_SESSION['email'];
-				                header( 'Location: ./postlogin.php' );
-                                exit;
-                            }
-                        ?>
+                        
                     </div>
                 </div>
             </section>
