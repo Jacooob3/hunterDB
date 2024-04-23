@@ -74,6 +74,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
+                    <br>
                     <div>
                         <label for="state_id">State</label>
                         <select name="state_id" id="state_id">
@@ -83,6 +84,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
+                    <br>
                     <div>
                         <label for="New Population">Population</label>
                         <input name="population" id="population" required style="color: black;" >
