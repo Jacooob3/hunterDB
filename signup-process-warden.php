@@ -36,10 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Signup successful. Redirecting to update page...";
     } catch (PDOException $e) {
         $pdo->rollBack();
-    // Invalid credentials
-    $_SESSION['error'] = 'Invalid username or password';
-    $redirectUrl = 'signup.php';
-    $message = "Signup unsuccessful. Redirecting back to login page...";    }
+        // Invalid credentials
+        $redirectUrl = 'signup.php';
+        $message = $e;    }
 } else {
     // Not a POST request
     echo "Invalid request.";
