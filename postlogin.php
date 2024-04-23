@@ -4,13 +4,6 @@ error_reporting(E_ALL);
 session_start();
 require 'includes/database-connection.php';
 
-// Check login credentials directly from POST data, not from session
-if (!isset($_POST['email']) || !isset($_POST['password'])) {
-    $_SESSION['error'] = 'Please enter email and password';
-    header('Location: http://yourdomain.com/login.php');
-    exit;
-}
-
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
