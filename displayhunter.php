@@ -12,13 +12,17 @@
 
 	function get_hunter_info(PDO $pdo, string $id) {
 		$sql = "SELECT 
-					CONCAT (lname, ', ', fname) AS name,
+					CONCAT (h.lname, ', ', h.fname) AS name,
 					CASE
-						WHEN gender = 'F' THEN 'Female'
-						WHEN gender = 'M' THEN 'Male'
+						WHEN h.gender = 'F' THEN 'Female'
+						WHEN h.gender = 'M' THEN 'Male'
 						ELSE 'Unknown'
-						END AS gender
-				FROM hunter
+						END AS gender,
+					h.email AS email,
+					date_of_birth AS dob,
+					CONCAT (a.street, ' ', a.city, ', ', a.state, ' ', a.zip) AS add
+				FROM hunter h
+				JOIN address a ON (a.address_id = h.address_id)
 				WHERE hunter_id = :id;";	
 		$hunter = pdo($pdo, $sql, ['id' => $id])->fetch();
 		return $hunter;
@@ -72,6 +76,9 @@
 										<h3 class="major"><?= $hunter_info['name'] ?></h3>
 										<h3>Information</h3>
 										<p><strong>Gender:</strong> <?= $hunter_info['gender']  ?></p>
+										<p><strong>Email:</strong> <?= $hunter_info['email']  ?></p>
+										<p><strong>Date of Brith:</strong> <?= $hunter_info['dob']  ?></p>
+										<p><strong>Address:</strong> <?= $hunter_info['add']  ?></p>						
 										<br />
 									</div>
 								</div>
