@@ -38,7 +38,7 @@
                         <li class="fa fa-home"></li><a href="index.php">Home</a><br>
                         <li class="fa fa-globe"></li><a href="about.php">About</a><br>
                         <li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
-                        <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
+                        <li class="fa fa-cogs"></li><a href="update.php">Warden</a><br>
                         <li class="fa fa-globe"></li><a href="account.php">Account</a><br>
                         <li class="fa fa-globe"></li><a href="login.php">Login</a><br>
                         <li class="fa fa-globe"></li><a href="signup.php">Sign Up</a><br>
@@ -74,6 +74,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
+                    <br>
                     <div>
                         <label for="state_id">State</label>
                         <select name="state_id" id="state_id">
@@ -83,6 +84,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
+                    <br>
                     <div>
                         <label for="New Population">Population</label>
                         <input name="population" id="population" required style="color: black;" >

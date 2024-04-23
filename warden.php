@@ -90,14 +90,14 @@
                         </div>
                 </section>
 
-            <!-- Panel -->
-            <section class="panel color0">
-
-                <div class="inner columns aligned">
-                    <div class="span-4-5">
-                        <h3 class="major">Warden Registry</h3>
-                <form action="logkillevent.php" method="GET">
-                    <div>
+<!-- Panel -->
+<section class="panel color2-alt">
+    <div class="inner columns aligned">
+        <div class="span-6-25">
+            <h3 class="major">Warden Registry</h3>
+            <form action="logkillevent.php" method="GET">
+                <div class="fields">
+                    <div class="field quarter">
                         <label for="warden_ID">Warden</label>
                         <select name="warden_id" id="warden_id">
                             <option selected="selected" disabled="disabled">Select a warden</option>
@@ -106,7 +106,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="hunter_id">Hunter ID</label>                        
                         <select name="hunter_id" id="hunter_id">
                             <option selected="selected" disabled="disabled">Select a hunter</option>
@@ -115,7 +115,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="weapon_id">Weapon Type</label>
                         <select name="weapon_id" id="weapon_id">
                             <option selected="selected" disabled="disabled">Select a weapon type</option>
@@ -124,8 +124,8 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                    <div>
-                    <label for="animal_id">Animal</label>
+                    <div class="field quarter">
+                        <label for="animal_id">Animal</label>
                         <select name="animal_id" id="animal_id">
                             <option selected="selected" disabled="disabled">Select an Animal</option>
                             <?php foreach ($animal_dropdown as $row): ?>
@@ -133,7 +133,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="license_id">License ID</label>
                         <select name="license_id" id="license_id">
                             <option selected="selected" disabled="disabled">Select an License</option>
@@ -142,7 +142,7 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="state_id">State</label>
                         <select name="state_id" id="state_id">
                             <option selected="selected" disabled="disabled">Select a state</option>
@@ -151,15 +151,15 @@
                             <?php endforeach ?>
                         </select>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="date_time">Date Time</label>
-                        <input type = "datetime-local"  name="date_time" id="date_time"/>
+                        <input type = "datetime-local"  name="date_time" id="date_time" style="color: black;"/>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="weight">Weight</label>
-                        <input type = "number" name="weight" id="weight"/>
+                        <input type = "number" name="weight" id="weight" style="color: black;"/>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="gender">Gender</label>
                         <select name="gender_id" id="gender_id">
                             <option selected="selected" disabled="disabled">Select a gender</option>
@@ -168,20 +168,18 @@
                             <option value="U">Unknown</option>
                         </select>
                     </div>
-                    <div>
+                    <div class="field quarter">
                         <label for="zone">Zone</label>
-                        <input name="zone" id="zone"/>
+                        <input name="zone" id="zone" style="color: black;"/>
                     </div>
-                    <div>
-                        <button>Log Hunting Event</button>
-                    </div>
-                </form>
-
-
-
-            </div>
-		        </div>
-            </section>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Log Hunting Event" class="primary color2" /></li>
+                </ul>
+            </form>
+        </div>
+    </div>
+</section>
             <!-- Scripts -->
             <script src="assets/js/jquery.min.js"></script>
             <script src="assets/js/browser.min.js"></script>
