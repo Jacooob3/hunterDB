@@ -103,11 +103,11 @@
 							<div class="inner columns aligned">
 								<div class="span-6-25">
 									<h3 class="major">Warden Sign Up</h3>
-									<form action="signup-process.php" method="POST">
+									<form action="signup-process-warden.php" method="POST">
 										<div class="fields">
-											<div class="field quarter">
-												<label for="username">Username:</label>
-												<input type="text" name="username" id="username" required>
+                                            <div class="field quarter">
+												<label for="email">Email:</label>
+												<input type="email" name="email" id="email" required>
 											</div>
 											<div class="field quarter">
 												<label for="password">Password:</label>
@@ -121,17 +121,9 @@
 												<label for="lastname">Last Name:</label>
 												<input type="text" name="lastname" id="lastname" required>
 											</div>
-											<div class="field quarter">
-												<label for="dob">Date of Birth:</label>
-												<input type="date" name="dob" id="dob" required style="color: black;">
-											</div>
-											<div class="field quarter">
-												<label for="gender">Gender:</label>
-												<select name="gender" id="gender" required>
-													<option value="M">Male</option>
-													<option value="F">Female</option>
-													<option value="O">Other</option>
-												</select>
+                                            <div class="field quarter">
+												<label for="lastname">Phone Number:</label>
+												<input type="tel" name="phonenum" id="phonenum" required>
 											</div>
 											<div class="field quarter">
 												<label for="state">State:</label>
@@ -139,26 +131,6 @@
 													<option value="MA">Massachusetts</option>
 													<option value="RI">Rhode Island</option>
 												</select>
-											</div>
-											<div class="field quarter">
-												<label for="license_number">License Number:</label>
-												<input type="text" name="license_number" id="license_number" required>
-											</div>
-											<div class="field quarter">
-												<label for="email">Email:</label>
-												<input type="email" name="email" id="email" required>
-											</div>
-											<div class="field quarter">
-												<label for="street">Street:</label>
-												<input type="text" name="street" id="street" required>
-											</div>
-											<div class="field quarter">
-												<label for="city">City:</label>
-												<input type="text" name="city" id="city" required>
-											</div>
-											<div class="field quarter">
-												<label for="zip">Zip:</label>
-												<input type="text" name="zip" id="zip" required>
 											</div>
 										</div>
 										<ul class="actions">
