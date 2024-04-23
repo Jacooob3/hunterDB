@@ -18,34 +18,65 @@
 ?>
 
 <html>
-    <?php include 'includes/head.php';?>
-    <body>
-        <?php include 'includes/header.php';?>
-        <center>
-            <h2>Warden POST Login</h2>
-            <?php echo $email; ?>
-            <hr>
-            <?php echo $pass; ?>
-            <hr>
-            <?php 
-                // if we have a resulte the login succeded 
-                if ($result != null) {
-                    echo $result['warden_id']; 
-                    echo ' logged in correctly'; 
-                    // store the warden id in the session and 
-                    // blank the password for security
-                    $_SESSION['warden_id'] = $result['warden_id'];
-                    $_SESSION['pass'] = ''; 
-                    // login is successfull, redirecting to update page
-                    // When account page is fixed, redirect to that
-                    header( 'Location: ./update.php' );
+	<?php include 'includes/head.php';?>
+	<body class="is-preload">
 
-                    
-                    
-                } else {
-                    echo 'username password not valid'; 
-                }
-            ?>
-        <center>						 
-    </body>
-</html>
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+				<!-- Wrapper -->
+					<div id="wrapper">
+
+                <!-- Panel (Sidebar) -->
+                <section class="panel color6">
+                        <div class="span-1">
+                            <ul class="contact-icons" style="margin-left: 20px; color: black;">
+                                <li class="fa fa-home"></li><a href="index.php">Home</a><br>
+                                <li class="fa fa-globe"></li><a href="about.php">About</a><br>
+                                <li class="fa fa-cogs"></li><a href="lookup.php">Lookup</a><br>
+                                <li class="fa fa-cogs"></li><a href="update.php">Update</a><br>
+                                <li class="fa fa-globe"></li><a href="account.php">Account</a><br>
+                                <li class="fa fa-globe"></li><a href="login.php">Login</a><br>
+                                <li class="fa fa-globe"></li><a href="signup.php">Sign Up</a><br>
+                            </ul>					
+                        </div>
+                </section>
+
+                <!-- Panel -->
+                <section class="panel color1-alt">
+                <div class="inner columns aligned">
+                    <div class="span-4-5">
+                    <h2>Warden POST Login</h2>
+                    <?php echo $email; ?>
+                    <hr>
+                    <?php echo $pass; ?>
+                    <hr>
+                    <?php 
+                        // if we have a resulte the login succeded 
+                        if ($result != null) {
+                            echo $result['warden_id']; 
+                            echo ' logged in correctly'; 
+                            // store the warden id in the session and 
+                            // blank the password for security
+                            $_SESSION['warden_id'] = $result['warden_id'];
+                            $_SESSION['pass'] = ''; 
+                            // login is successfull, redirecting to update page
+                            // When account page is fixed, redirect to that
+                            header( 'Location: ./update.php' );
+
+                        } else {
+                            echo 'username password not valid'; 
+                        }
+                    ?>
+                    </div>
+                </div>
+            </section>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>>
+   
