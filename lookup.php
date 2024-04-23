@@ -35,14 +35,16 @@
 						</div>
 				</section>
 
-				<!-- Panel -->
-				<section class="panel color2-alt">
-						<div class="inner columns aligned">
-							<div class="span-4-5">
-								<h3 class="major">Lookup</h3>
-							</div>
-						</div>
-				</section>		
+			<!-- Panel (Spotlight) -->
+			<section class="panel spotlight medium left">
+					<div class="content span-7">
+						<h2 class="major">Track Information</h2>
+						<p>Look up animal populations by name or ID or locate hunters to find your next hunting companion.</p>
+					</div>
+					<div class="image filtered tinted" data-position="top left">
+						<img src="images/huntSunset.png" alt="" />
+					</div>
+			</section>	
 					
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
