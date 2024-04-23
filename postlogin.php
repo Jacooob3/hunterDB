@@ -1,37 +1,37 @@
 <?php
-// session_start();
-// require 'includes/database-connection.php';
+session_start();
+require 'includes/database-connection.php';
 
-// // Check login credentials directly from POST data, not from session
-// if (!isset($_POST['email']) || !isset($_POST['password'])) {
-//     $_SESSION['error'] = 'Please enter email and password';
-//     header('Location: login.php');
-//     exit;
-// }
+// Check login credentials directly from POST data, not from session
+if (!isset($_POST['email']) || !isset($_POST['password'])) {
+    $_SESSION['error'] = 'Please enter email and password';
+    header('Location: login.php');
+    exit;
+}
 
-// $email = $_POST['email'];
-// $pass = $_POST['password'];
+$email = $_POST['email'];
+$pass = $_POST['password'];
 
-// // Prepare a statement for execution
-// $stmt = $pdo->prepare("SELECT warden_id, pass FROM game_warden WHERE email = :email");
-// $stmt->bindParam(':email', $email);
-// $stmt->execute();
+// Prepare a statement for execution
+$stmt = $pdo->prepare("SELECT warden_id, pass FROM game_warden WHERE email = :email");
+$stmt->bindParam(':email', $email);
+$stmt->execute();
 
-// $user = $stmt->fetch(PDO::FETCH_ASSOC);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// if ($user && password_verify($pass, $user['pass'])) {
-//     // Successful login
-//     $_SESSION['warden_id'] = $user['warden_id'];
+if ($user && password_verify($pass, $user['pass'])) {
+    // Successful login
+    $_SESSION['warden_id'] = $user['warden_id'];
 
-//     // Redirect to update page or dashboard
-//     header('Location: ./update.php');
-//     exit;
-// } else {
-//     // Invalid credentials
-//     $_SESSION['error'] = 'Invalid username or password';
-//     header('Location: login.php');
-//     exit;
-// }
+    // Redirect to update page or dashboard
+    header('Location: ./update.php');
+    exit;
+} else {
+    // Invalid credentials
+    $_SESSION['error'] = 'Invalid username or password';
+    header('Location: login.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
