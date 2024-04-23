@@ -84,7 +84,7 @@
                 <section class="panel color3">
                     <div class="span-1">
                             <ul class="contact-icons" style="margin-left: 20px; color: black;">
-                                <li class="fa fa-globe"></li><a href="warden.php">Warden Registry</a><br>
+                                <li class="fa fa-globe"></li><a href="warden.php">Registry</a><br>
                             </ul>					
                         </div>
                 </section>
