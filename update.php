@@ -45,7 +45,7 @@
 						<p>As a warden, work with hunters to update and track kills and ensure your local animal population remains healthy.</p>
 					</div>
 					<div class="image filtered tinted" data-position="top left">
-						<img src="images/huntSunset.png" alt="" />
+						<img src="images/huntSunrise.png" alt="" />
 					</div>
 			</section>
 						
