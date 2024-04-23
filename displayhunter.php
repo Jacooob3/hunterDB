@@ -50,26 +50,34 @@
                     </ul>
                 </div>
             </section>
-            <center>
-                <!-- Panel -->
-                <section class="panel color2-alt">
 
+			<!-- Panel (Sidebar) -->
+				<section class="panel color3">
+					<div class="span-1">
+						<ul class="contact-icons" style="margin-left: 20px; color: black;">
+							<li class="fa fa-home"></li><a href="lookupanimalpop.php">Look Up Animal Population</a><br>
+							<li class="fa fa-globe"></li><a href="lookuphunter.php">Look Up Hunter</a><br>
+						</ul>					
+					</div>
+			</section>
+
+
+			<!-- Panel -->
+                <section class="panel color2-alt">
                     <div class="inner columns aligned">
                         <div class="span-4-5">
-		<main>
-			<div class="hunter-details-container">
-				<div class="hunter-details">
-			        <h1><?= $hunter_info['name'] ?></h1>
-			        <hr />
-			        <h3>Hunter Information</h3>
-			        <p><strong>Gender:</strong> <?= $hunter_info['gender']  ?></p>
-			        <br />
-			    </div>
-			</div>
-		</main>
+							<main>
+								<div class="hunter-details-container">
+									<div class="hunter-details">
+										<h3 class="major"><?= $hunter_info['name'] ?></h3>
+										<h3>Information</h3>
+										<p><strong>Gender:</strong> <?= $hunter_info['gender']  ?></p>
+										<br />
+									</div>
+								</div>
+							</main>
                         </div>
                 </section>
-            </center>
         </div>
     </div>
 	</body>
