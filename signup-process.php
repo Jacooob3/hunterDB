@@ -16,11 +16,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = trim($_POST['city']);
     $zip = trim($_POST['zip']);
 
+    $yes = true;
     // Validate input
     if (empty($username) || empty($password) || empty($email) || empty($firstname) || empty($lastname) || empty($dob) || empty($gender) || empty($license_number)) {
         $redirectUrl = 'login.php';
         $message = "Signup failed. Please fill in all fields. Please try again.";
-        exit;
+        $yes = false;
     }
 
     // Check if username already exists in the hunter table
@@ -29,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->rowCount() > 0) {
         $redirectUrl = 'login.php';
         $message = "Signup failed. Username already Taken. Please try again.";
-        exit;
+        $yes = false;
     }
 
     // Check if license number already exists in the license table
@@ -38,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->rowCount() > 0) {
         $redirectUrl = 'login.php';
         $message = "Signup failed. License number already used. Please try again.";
-        exit;
+        $yes = false;
     }
 
     // Hash the password
@@ -51,27 +52,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $address_id = $pdo->query("SELECT MAX(address_id) + 1 AS next_id FROM address")->fetch()['next_id'];
 
     // Insert the new user into the hunter table
-    try {
-        $pdo->beginTransaction();
-        // Insert the address into the address table
-        $stmt = $pdo->prepare("INSERT INTO address (address_id, street, state_id, city, zip) VALUES (?, ?, ?, ?, ?)");
-        $stmt->execute([$address_id, $street, $state, $city, $zip]);
+    if ($yes){
+        try {
+            $pdo->beginTransaction();
+            // Insert the address into the address table
+            $stmt = $pdo->prepare("INSERT INTO address (address_id, street, state_id, city, zip) VALUES (?, ?, ?, ?, ?)");
+            $stmt->execute([$address_id, $street, $state, $city, $zip]);
 
-        $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, fname, lname, address_id, date_of_birth, gender, email, username, pass) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
-        $stmt->execute([$hunter_id, $firstname, $lastname, $address_id , $dob, $gender, $email, $username, $hashed_password]);
+            $stmt = $pdo->prepare("INSERT INTO hunter (hunter_id, fname, lname, address_id, date_of_birth, gender, email, username, pass) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $stmt->execute([$hunter_id, $firstname, $lastname, $address_id , $dob, $gender, $email, $username, $hashed_password]);
 
-        // Insert the license number into the license table
-        $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id) VALUES (?, ?, ?)");
-        $stmt->execute([$license_number, $state, $hunter_id,]);
+            // Insert the license number into the license table
+            $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id) VALUES (?, ?, ?)");
+            $stmt->execute([$license_number, $state, $hunter_id,]);
 
-        $pdo->commit();
-        $redirectUrl = 'login.php';
-        $message = "Signup successful. Redirecting to Login page...";
-    } catch (PDOException $e) {
-        $pdo->rollBack();
-        $redirectUrl = 'login.php';
-        $message = "Signup failed. Please try again." . $e;
-    }
+            $pdo->commit();
+            $redirectUrl = 'login.php';
+            $message = "Signup successful. Redirecting to Login page...";
+        } catch (PDOException $e) {
+            $pdo->rollBack();
+            $redirectUrl = 'login.php';
+            $message = "Signup failed. Please try again." . $e;
+        }
+    }   
 } else {
     // Not a POST request
     echo "Invalid request.";
