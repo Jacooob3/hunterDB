@@ -2,10 +2,10 @@
 session_start();
 require 'includes/database-connection.php';
 
-$email = trim($_POST['hunteremail']);
-$pass = trim($_POST['hunterpassword']);
+$email = trim($_POST['email']);
+$pass = trim($_POST['password']);
 
-$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :hunteremail");
+$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
