@@ -24,7 +24,7 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         $_SESSION['email'] = $user['email'];
         $_SESSION['date_of_birth'] = $user['date_of_birth'];
         $_SESSION['gender'] = $user['gender'];
-        $_SESSION['username'] = $username['username'];
+        $_SESSION['username'] = $user['username'];
         $redirectUrl = 'account.php';
         $message = "Login successful. Redirecting to account page...";
     } else {
