@@ -14,7 +14,7 @@ $stmt->execute();
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($user && password_verify($pass, $user['pass'])) {
+if ($user && password_verify($pass, $user['password'])) {
     // Successful login
     $_SESSION['logged_in'] = true;
     $_SESSION['role'] = 'hunter';
