@@ -66,7 +66,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $message = "Signup successful. Redirecting to Login page...";
     } catch (PDOException $e) {
         $pdo->rollBack();
-        $message = $e;   ;
+        $redirectUrl = 'login.php';
+        $message = "Signup failed. Please try again." . $e;
     }
 } else {
     // Not a POST request
