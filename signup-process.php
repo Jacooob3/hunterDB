@@ -61,8 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare("INSERT INTO license (license_id, state_id, hunter_id) VALUES (?, ?, ?)");
         $stmt->execute([$license_number, $state, $hunter_id,]);
 
-        
-
         $pdo->commit();
 
         echo "Signup successful. <a href='login.php'>Login here</a>";
