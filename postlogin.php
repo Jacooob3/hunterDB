@@ -8,7 +8,7 @@ $email = trim($_POST['email']);
 $pass = trim($_POST['password']);
 
 // Prepare a statement for execution
-$stmt = $pdo->prepare("SELECT warden_id, pass FROM game_warden WHERE email = :email");
+$stmt = $pdo->prepare("SELECT * FROM game_warden WHERE email = :email");
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 
@@ -19,6 +19,10 @@ if ($user && password_verify($pass, $user['pass'])) {
     $_SESSION['logged_in'] = true;
     $_SESSION['role'] = 'warden';
     $_SESSION['id'] = $user['warden_id'];
+    $_SESSION['name'] = $user['fname'] . ' ' . $user['lname'];
+    $_SESSION['email'] = $user['email'];
+    $_SESSION['state_id'] = $user['state_id'];
+    $_SESSION['phone'] = $user['phone'];
     $redirectUrl = 'update.php';
     $message = "Login successful. Redirecting to update page...";
 } else {

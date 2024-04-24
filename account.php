@@ -39,14 +39,17 @@ require 'includes/database-connection.php';
 								<div class="inner columns aligned">
 									<div class="span-4-5">
 										<h3 class="major">Profile</h3>
-										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && ($_SESSION['role'] == 'hunter')): ?>
 											<p>Welcome, <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'No name set'; ?></p>
 											<p>Username: <?= isset($_SESSION['username']) ? $_SESSION['username'] : 'No username set'; ?></p>
 											<p>Email: <?= isset($_SESSION['email']) ? $_SESSION['email'] : 'No email set'; ?></p>
 											<p>Date of Birth: <?= isset($_SESSION['date_of_birth']) ? $_SESSION['date_of_birth'] : 'No date of birth set'; ?></p>
 											<p>Gender: <?= isset($_SESSION['gender']) ? $_SESSION['gender'] : 'No gender set'; ?></p>
-										<?php else: ?>
-											<p>Please log in.</p>
+										<?php if ($_SESSION['role'] == 'warden'): ?>
+											<p>Welcome, <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'No name set'; ?></p>
+											<p>State: <?= isset($_SESSION['state_id']) ? $_SESSION['state_id'] : 'No state set'; ?></p>
+											<p>Email: <?= isset($_SESSION['email']) ? $_SESSION['email'] : 'No email set'; ?></p>
+											<p>Phone Number: <?= isset($_SESSION['phone']) ? $_SESSION['phone'] : 'No date of birth set'; ?></p>
 										<?php endif; ?>
 									</div>
 								</div>
