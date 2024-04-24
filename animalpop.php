@@ -39,6 +39,7 @@
                                         <li class="fa fa-home"></li><a href="index.php">Home</a><br>
                                         <li class="fa fa-address-card"></li><a href="about.php">About</a><br>
                                         <li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
+                                        <li class="icon solid fa-flag-usa"></li><a href="help.php">Laws/Legals</a><br>
                                         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
                                             <?php if ($_SESSION['role'] == 'warden'): ?>
                                                 <li class="fa fa-tag"></li><a href="update.php">Warden</a><br>

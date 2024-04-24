@@ -29,6 +29,7 @@
 										<li class="fa fa-home"></li><a href="index.php">Home</a><br>
 										<li class="fa fa-address-card"></li><a href="about.php">About</a><br>
 										<li class="fa fa-search"></li><a href="lookup.php">Lookup</a><br>
+										<li class="icon solid fa-flag-usa"></li><a href="help.php">Laws/Legals</a><br>
 										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
 											<?php if ($_SESSION['role'] == 'warden'): ?>
 												<li class="fa fa-tag"></li><a href="update.php">Warden</a><br>
@@ -77,7 +78,7 @@
 
 								<div class="span-50">
 										<ul class="contact-icons color">
-											<li class="icon solid fa-tree"><a href="#">Track local hunting zones</a></li>
+											<!-- <li class="icon solid fa-tree"><a href="#">Track local hunting zones</a></li> -->
 											<li class="icon solid fa-paw"><a href="#">Register your quarry</a></li>
 											<li class="icon solid fa-bullseye"><a href="#">Check weapon legality</a></li>
 											<li class="icon solid fa-flag-usa"><a href="#">Compare state laws</a></li>
