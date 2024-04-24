@@ -312,6 +312,7 @@ input, select, textarea {
 		a:hover {
 			border-bottom-color: red;
 			color: blue;
+			font-family:  Helvetica, sans-serif;
 		}
 
 	strong, b {
