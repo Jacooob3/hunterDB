@@ -1,22 +1,21 @@
 <?php
-    session_start();
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-    require 'includes/database-connection.php';
+session_start();
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+require 'includes/database-connection.php';
 
-    $email = trim($_POST['email']);
-    $pass = trim($_POST['password']);
+$email = trim($_POST['email']);
+$pass = trim($_POST['password']);
 
-    // Prepare a statement for execution
-    $stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
-    $stmt->bindParam(':email', $email);
-    $stmt->execute();
+// Prepare a statement for execution
+$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
+$stmt->bindParam(':email', $email);
+$stmt->execute();
 
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+$user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    $hashed_password = password_hash($pass, PASSWORD_DEFAULT);
 
-    if ($user && ($user['pass'] == $hashed_password)) {
+    if ($user && password_verify($pass, $user['pass'])) {
         // Successful login
         $_SESSION['logged_in'] = true;
         $_SESSION['role'] = 'hunter';
@@ -27,7 +26,7 @@
         // Invalid credentials
         $_SESSION['error'] = 'Invalid username or password';
         $redirectUrl = 'login.php';
-        $message = $user['pass'] . " " . $hashed_password . " Login unsuccessful. Redirecting back to login page...";
+        $message = "Login unsuccessful. Redirecting back to login page...";
     }
 ?>
 
