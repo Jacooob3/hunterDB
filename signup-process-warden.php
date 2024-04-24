@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $pdo->commit();
         // Successful login
         $redirectUrl = 'login.php';
-        $message = "Signup successful. Redirecting to update page...";
+        $message = "Signup successful. Redirecting to login page...";
     } catch (PDOException $e) {
         $pdo->rollBack();
         // Invalid credentials
