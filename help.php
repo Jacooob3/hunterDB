@@ -49,7 +49,7 @@ require 'includes/database-connection.php';
 										<p>Here are Massachusetts weapon laws.</p>
                                         <a href="https://www.mass.gov/info-details/general-hunting-regulations#:~:text=22%20caliber%20long%20rifle%2C%20and,1%2F2%20hour%20before%20sunrise." target="_blank" class="button">Check MA Weapon Rules</a>
 									</div>
-                                    <div class="span-1">
+                                    <div class="span-2">
 										<h3 class="major">Hunting Laws in RI</h3>
 										<p>Here are RI's hunting laws and regulations.</p>
                                         <a href="https://rules.sos.ri.gov/regulations/part/250-60-00-9" target="_blank" class="button">Check RI Hunting Regulations</a>
