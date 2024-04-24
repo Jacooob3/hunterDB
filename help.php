@@ -44,14 +44,19 @@ require 'includes/database-connection.php';
 										<p>It may be hard to keep track of laws and rules that are constantly changing. You can check the link below to check RI weapon rules!</p>
                                         <a href="https://www.eregulations.com/rhodeisland/hunting/deer-hunting#:~:text=Shotguns%20of%2010%2C%2012%2C%2016,deer%20tag%20immediately%20after%20taking." target="_blank" class="button">Check RI Weapon Rules</a>
 									</div>
+								</div>
+						</section>
+						<section class="panel color1-alt">
 									<div class="span-2">
 										<h3 class="major">Weapon Legality in MA</h3>
 										<p>Here are Massachusetts weapon laws.</p>
                                         <a href="https://www.mass.gov/info-details/general-hunting-regulations#:~:text=22%20caliber%20long%20rifle%2C%20and,1%2F2%20hour%20before%20sunrise." target="_blank" class="button">Check MA Weapon Rules</a>
 									</div>
-                                    <div class="span-1">
-										<h3 class="major">Hunting Laws in RI</h3>
-										<p>Here are RI's hunting laws and regulations.</p>
+						</section>
+					<section class="panel color1-alt">
+	                                    <div class="span-1">
+						<h3 class="major">Hunting Laws in RI</h3>
+						<p>Here are RI's hunting laws and regulations.</p>
                                         <a href="https://rules.sos.ri.gov/regulations/part/250-60-00-9" target="_blank" class="button">Check RI Hunting Regulations</a>
 									</div>
 									<div class="span-2">
