@@ -26,7 +26,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("SELECT * FROM hunter WHERE username = ?");
     $stmt->execute([$username]);
     if ($stmt->rowCount() > 0) {
-        echo "Username already taken.";
+        $redirectUrl = 'login.php';
+        $message = "Signup failed. Username already Taken. Please try again.";
         exit;
     }
 
@@ -34,7 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt = $pdo->prepare("SELECT * FROM license WHERE license_id = ?");
     $stmt->execute([$license_number]);
     if ($stmt->rowCount() > 0) {
-        echo "License Number already taken.";
+        $redirectUrl = 'login.php';
+        $message = "Signup failed. License number already used. Please try again.";
         exit;
     }
 
