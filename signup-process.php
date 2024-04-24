@@ -16,7 +16,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = trim($_POST['city']);
     $zip = trim($_POST['zip']);
 
-    
+    // Validate input
+    if (empty($username) || empty($password) || empty($email) || empty($firstname) || empty($lastname) || empty($dob) || empty($gender) || empty($license_number)) {
+        $redirectUrl = 'login.php';
+        $message = "Signup failed. Please fill in all fields. Please try again.";
+        exit;
+    }
+
+    // Check if username already exists in the hunter table
+    $stmt = $pdo->prepare("SELECT * FROM hunter WHERE username = ?");
+    $stmt->execute([$username]);
+    if ($stmt->rowCount() > 0) {
+        $redirectUrl = 'login.php';
+        $message = "Signup failed. Username already Taken. Please try again.";
+        exit;
+    }
+
+    // Check if license number already exists in the license table
+    $stmt = $pdo->prepare("SELECT * FROM license WHERE license_id = ?");
+    $stmt->execute([$license_number]);
+    if ($stmt->rowCount() > 0) {
+        $redirectUrl = 'login.php';
+        $message = "Signup failed. License number already used. Please try again.";
+        exit;
+    }
 
     // Hash the password
     $hashed_password = password_hash($password, PASSWORD_DEFAULT);
@@ -29,27 +52,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insert the new user into the hunter table
     try {
-        // Validate input
-        if (empty($username) || empty($password) || empty($email) || empty($firstname) || empty($lastname) || empty($dob) || empty($gender) || empty($license_number)) {
-            $redirectUrl = 'login.php';
-            $message = "Signup failed. Please fill in all fields. Please try again.";
-        }
-
-        // Check if username already exists in the hunter table
-        $stmt = $pdo->prepare("SELECT * FROM hunter WHERE username = ?");
-        $stmt->execute([$username]);
-        if ($stmt->rowCount() > 0) {
-            $redirectUrl = 'login.php';
-            $message = "Signup failed. Username already Taken. Please try again.";
-        }
-
-        // Check if license number already exists in the license table
-        $stmt = $pdo->prepare("SELECT * FROM license WHERE license_id = ?");
-        $stmt->execute([$license_number]);
-        if ($stmt->rowCount() > 0) {
-            $redirectUrl = 'login.php';
-            $message = "Signup failed. License number already used. Please try again.";
-        }
         $pdo->beginTransaction();
         // Insert the address into the address table
         $stmt = $pdo->prepare("INSERT INTO address (address_id, street, state_id, city, zip) VALUES (?, ?, ?, ?, ?)");
