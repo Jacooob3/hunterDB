@@ -37,7 +37,7 @@ require 'includes/database-connection.php';
 						</section>
 							
 					<!-- Panel -->
-						<section class="panel color1-alt">
+						<section class="panel color2-alt">
 							<div class="inner columns aligned">
 								<div class="span-3">
 									<h3 class="major">Weapon Legality in RI</h3>
@@ -67,7 +67,7 @@ require 'includes/database-connection.php';
 									<img src="images/huntLake.png" alt="" />
 								</div>
 							</section>
-						<section class="panel color1-alt">
+						<section class="panel color4-alt">
 							<div class="inner columns aligned">
 								<div class="span-3">
 									<h3 class="major">Hunting Laws in RI</h3>
