@@ -4,8 +4,8 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 require 'includes/database-connection.php';
 
-$email = trim($_POST['email']);
-$pass = trim($_POST['password']);
+$email = trim($_POST['hunteremail']);
+$pass = trim($_POST['hunterpassword']);
 
 // Prepare a statement for execution
 $stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
@@ -20,7 +20,7 @@ if ($user && password_verify($pass, $user['pass'])) {
     $_SESSION['role'] = 'hunter';
     $_SESSION['id'] = $user['hunter_id'];
     $redirectUrl = 'account.php';
-    $message = "Login successful. Redirecting to update page...";
+    $message = "Login successful. Redirecting to account page...";
 } else {
     // Invalid credentials
     $_SESSION['error'] = 'Invalid username or password';

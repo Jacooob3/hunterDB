@@ -58,11 +58,11 @@
                             <div class="fields">
                                 <div class="field">
                                     <label for="email">Email</label>
-                                    <input type="email" name="email" id="email" value="" placeholder="jane@untitled.tld" />
+                                    <input type="email" name="hunteremail" id="hunteremail" value="" placeholder="jane@untitled.tld" />
                                 </div>
                                 <div class="field">
                                     <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" value="" />
+                                    <input type="password" name="hunterpassword" id="hunterpassword" value="" />
                                 </div>
                             </div>
                             <ul class="actions">
