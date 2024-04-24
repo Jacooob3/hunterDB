@@ -49,7 +49,7 @@ require 'includes/database-connection.php';
 										<!-- Panel (Spotlight) -->
 						<section class="panel color2-alt">
 								<div class="image filtered tinted span-1-75" data-position="25% 25%">
-									<img src="images/huntLake.png" alt="" />
+									<img src="images/huntLaw1.png" alt="" />
 								</div>
 							</section>						
 						<section class="panel color1-alt">
@@ -64,7 +64,7 @@ require 'includes/database-connection.php';
 				<!-- Panel (Spotlight) -->
 						<section class="panel color2-alt">
 								<div class="image filtered tinted span-1-75" data-position="25% 25%">
-									<img src="images/huntLake.png" alt="" />
+									<img src="images/huntLaw2.png" alt="" />
 								</div>
 							</section>
 						<section class="panel color4-alt">
@@ -79,7 +79,7 @@ require 'includes/database-connection.php';
 				<!-- Panel (Spotlight) -->
 						<section class="panel color2-alt">
 								<div class="image filtered tinted span-1-75" data-position="25% 25%">
-									<img src="images/huntLake.png" alt="" />
+									<img src="images/huntLaw3.png" alt="" />
 								</div>
 							</section>
 						<section class="panel color1-alt">
@@ -94,7 +94,7 @@ require 'includes/database-connection.php';
 						<!-- Panel (Spotlight) -->
 						<section class="panel color2-alt">
 								<div class="image filtered tinted span-1-75" data-position="25% 25%">
-									<img src="images/huntLake.png" alt="" />
+									<img src="images/huntLaw4.png" alt="" />
 								</div>
 							</section>
 
