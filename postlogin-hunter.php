@@ -8,13 +8,13 @@ $email = trim($_POST['email']);
 $pass = trim($_POST['password']);
 
 // Prepare a statement for execution
-$stmt = $pdo->prepare("SELECT hunter_id, password FROM hunter WHERE email = :email");
+$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-if ($user && password_verify($pass, $user['password'])) {
+if ($user && password_verify($pass, $user['pass'])) {
     // Successful login
     $_SESSION['logged_in'] = true;
     $_SESSION['role'] = 'hunter';
