@@ -39,6 +39,13 @@ require 'includes/database-connection.php';
 								<div class="inner columns aligned">
 									<div class="span-4-5">
 										<h3 class="major">Profile</h3>
+										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
+											<p>Welcome, <?= $_SESSION['name'] ?>!</p>
+											<p>Username: <?= $_SESSION['username'] ?></p>
+											<p>Email: <?= $_SESSION['email'] ?></p>
+											<p>Date of Birth: <?= $_SESSION['date_of_birth'] ?></p>
+											<p>Gender: <?= $_SESSION['gender'] ?></p>
+											
 									</div>
 								</div>
 							</section>

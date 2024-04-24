@@ -8,7 +8,7 @@ $email = trim($_POST['email']);
 $pass = trim($_POST['password']);
 
 // Prepare a statement for execution
-$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
+$stmt = $pdo->prepare("SELECT * FROM hunter WHERE email = :email");
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 
@@ -20,6 +20,11 @@ $user = $stmt->fetch(PDO::FETCH_ASSOC);
         $_SESSION['logged_in'] = true;
         $_SESSION['role'] = 'hunter';
         $_SESSION['id'] = $user['hunter_id'];
+        $_SESSION['name'] = $user['fname'] . ' ' . $user['lname'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['date_of_birth'] = $user['date_of_birth'];
+        $_SESSION['gender'] = $user['gender'];
+        $_SESSION['username'] = $username['username'];
         $redirectUrl = 'account.php';
         $message = "Login successful. Redirecting to account page...";
     } else {
