@@ -1,27 +1,31 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 session_start();
 require 'includes/database-connection.php';
 
-$email = trim($_POST['email']);
-$pass = trim($_POST['password']);
+$email = $_POST['email'];
+$pass = $_POST['password'];
 
+// Prepare a statement for execution
 $stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
 $stmt->bindParam(':email', $email);
 $stmt->execute();
+
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
 if ($user && password_verify($pass, $user['pass'])) {
+    // Successful login
     $_SESSION['logged_in'] = true;
     $_SESSION['role'] = 'hunter';
     $_SESSION['id'] = $user['hunter_id'];
     $redirectUrl = 'account.php';
     $message = "Login successful. Redirecting to account page...";
-    exit;
 } else {
+    // Invalid credentials
     $_SESSION['error'] = 'Invalid username or password';
     $redirectUrl = 'login.php';
     $message = "Login unsuccessful. Redirecting back to login page...";
-    exit;
 }
 ?>
 
