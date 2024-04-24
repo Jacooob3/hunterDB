@@ -311,7 +311,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: #ffe4b4;
+			color: red;
 		}
 
 	strong, b {
