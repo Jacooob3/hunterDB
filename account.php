@@ -40,12 +40,14 @@ require 'includes/database-connection.php';
 									<div class="span-4-5">
 										<h3 class="major">Profile</h3>
 										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']): ?>
-											<p>Welcome, <?= $_SESSION['name'] ?>!</p>
-											<p>Username: <?= $_SESSION['username'] ?></p>
-											<p>Email: <?= $_SESSION['email'] ?></p>
-											<p>Date of Birth: <?= $_SESSION['date_of_birth'] ?></p>
-											<p>Gender: <?= $_SESSION['gender'] ?></p>
-											
+											<p>Welcome, <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'No name set'; ?></p>
+											<p>Username: <?= isset($_SESSION['username']) ? $_SESSION['username'] : 'No username set'; ?></p>
+											<p>Email: <?= isset($_SESSION['email']) ? $_SESSION['email'] : 'No email set'; ?></p>
+											<p>Date of Birth: <?= isset($_SESSION['date_of_birth']) ? $_SESSION['date_of_birth'] : 'No date of birth set'; ?></p>
+											<p>Gender: <?= isset($_SESSION['gender']) ? $_SESSION['gender'] : 'No gender set'; ?></p>
+										<?php else: ?>
+											<p>Please log in.</p>
+										<?php endif; ?>
 									</div>
 								</div>
 							</section>
