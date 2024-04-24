@@ -46,7 +46,12 @@ require 'includes/database-connection.php';
 								</div>
 							</div>
 						</section>
-												
+										<!-- Panel (Spotlight) -->
+						<section class="panel color2-alt">
+								<div class="image filtered tinted span-1-75" data-position="25% 25%">
+									<img src="images/huntLake.png" alt="" />
+								</div>
+							</section>						
 						<section class="panel color1-alt">
 							<div class="inner columns aligned">
 								<div class="span-1">
@@ -56,7 +61,12 @@ require 'includes/database-connection.php';
 								</div>
 							</div>
 						</section>
-
+				<!-- Panel (Spotlight) -->
+						<section class="panel color2-alt">
+								<div class="image filtered tinted span-1-75" data-position="25% 25%">
+									<img src="images/huntLake.png" alt="" />
+								</div>
+							</section>
 						<section class="panel color1-alt">
 							<div class="inner columns aligned">
 								<div class="span-1">
@@ -66,7 +76,12 @@ require 'includes/database-connection.php';
 								</div>
 							</div>
 						</section>
-
+				<!-- Panel (Spotlight) -->
+						<section class="panel color2-alt">
+								<div class="image filtered tinted span-1-75" data-position="25% 25%">
+									<img src="images/huntLake.png" alt="" />
+								</div>
+							</section>
 						<section class="panel color1-alt">
 							<div class="inner columns aligned">
 								<div class="span-1">
