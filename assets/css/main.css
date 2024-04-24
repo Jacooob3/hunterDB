@@ -310,8 +310,8 @@ input, select, textarea {
 	}
 
 		a:hover {
-			border-bottom-color: transparent;
-			color: #ffe4b4;
+			border-bottom-color: red;
+			color: red;
 		}
 
 	strong, b {
