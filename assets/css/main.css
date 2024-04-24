@@ -33,7 +33,9 @@ body {
 	line-height: 1;
 }
 
-
+	ol, ul {
+		list-style:none;
+	}
 
 blockquote, q {
 	quotes: none;
@@ -309,7 +311,7 @@ input, select, textarea {
 
 		a:hover {
 			border-bottom-color: transparent;
-			color: red;
+			color: #ffe4b4;
 		}
 
 	strong, b {
