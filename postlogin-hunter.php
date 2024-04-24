@@ -25,7 +25,7 @@ if ($user && password_verify($pass, $user['pass'])) {
     // Invalid credentials
     $_SESSION['error'] = 'Invalid username or password';
     $redirectUrl = 'login.php';
-    $message = $email . " " . $pass . " Login unsuccessful. Redirecting back to login page...";
+    $message = $user['pass'];
 }
 ?>
 
