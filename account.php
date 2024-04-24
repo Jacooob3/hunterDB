@@ -45,11 +45,14 @@ require 'includes/database-connection.php';
 											<p>Email: <?= isset($_SESSION['email']) ? $_SESSION['email'] : 'No email set'; ?></p>
 											<p>Date of Birth: <?= isset($_SESSION['date_of_birth']) ? $_SESSION['date_of_birth'] : 'No date of birth set'; ?></p>
 											<p>Gender: <?= isset($_SESSION['gender']) ? $_SESSION['gender'] : 'No gender set'; ?></p>
-										<?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && $_SESSION['role'] == 'warden'): ?>
+										<?php elseif (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] && $_SESSION['role'] == 'warden'): ?>
 											<p>Welcome, <?= isset($_SESSION['name']) ? $_SESSION['name'] : 'No name set'; ?></p>
 											<p>State: <?= isset($_SESSION['state_id']) ? $_SESSION['state_id'] : 'No state set'; ?></p>
 											<p>Email: <?= isset($_SESSION['email']) ? $_SESSION['email'] : 'No email set'; ?></p>
 											<p>Phone Number: <?= isset($_SESSION['phone']) ? $_SESSION['phone'] : 'No date of birth set'; ?></p>
+										<?php else: ?>
+											<p>You are not logged in.</p>
+											
 										<?php endif; ?>
 									</div>
 								</div>
