@@ -5,7 +5,7 @@ require 'includes/database-connection.php';
 $email = trim($_POST['hunteremail']);
 $pass = trim($_POST['hunterpassword']);
 
-$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :email");
+$stmt = $pdo->prepare("SELECT hunter_id, pass FROM hunter WHERE email = :hunteremail");
 $stmt->bindParam(':email', $email);
 $stmt->execute();
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -14,11 +14,13 @@ if ($user && password_verify($pass, $user['pass'])) {
     $_SESSION['logged_in'] = true;
     $_SESSION['role'] = 'hunter';
     $_SESSION['id'] = $user['hunter_id'];
-    header('Location: account.php');
+    $redirectUrl = 'account.php';
+    $message = "Login successful. Redirecting to account page...";
     exit;
 } else {
     $_SESSION['error'] = 'Invalid username or password';
-    header('Location: login.php');
+    $redirectUrl = 'login.php';
+    $message = "Login unsuccessful. Redirecting back to login page...";
     exit;
 }
 ?>
