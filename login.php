@@ -25,13 +25,12 @@
                         </ul>					
                     </div>
             </section>
-            
-            <!-- Panel -->
-            <section class="panel color1-alt">
+        	<!-- Panel -->
+            <section class="panel color2-alt">
                 <div class="inner columns aligned">
                     <div class="span-4-5">
-                        <h3 class="major">Warden Log-In</h3>
-                        <form action="postlogin.php" method="POST" >
+                        <h3 class="major">Hunter Log-In</h3>
+                        <form action="postlogin-hunter.php" method="POST" >
                             <div class="fields">
                                 <div class="field">
                                     <label for="email">Email</label>
@@ -50,12 +49,13 @@
                     </div>
                 </div>
             </section>
+
             <!-- Panel -->
             <section class="panel color1-alt">
                 <div class="inner columns aligned">
                     <div class="span-4-5">
-                        <h3 class="major">Hunter Log-In</h3>
-                        <form action="postlogin-hunter.php" method="POST" >
+                        <h3 class="major">Warden Log-In</h3>
+                        <form action="postlogin.php" method="POST" >
                             <div class="fields">
                                 <div class="field">
                                     <label for="email">Email</label>
