@@ -17,6 +17,22 @@
                      license_id, state_id, date_time, weight, gender, zone)
                 VALUES (:hid1, :wid2, :aid3, :wid4, :lid5, :sid6, :did7, :wid8, :gid9, :zid10);";
 	$result = pdo($pdo, $sql, ['hid1'=>$hunter_id,'wid2'=>$weapon_id,'aid3'=>$animal_id,'wid4'=>$warden_id,'lid5'=>$license_id,'sid6'=>$state_id,'did7'=>$date_time,'wid8'=>$weight,'gid9'=>$gender,'zid10'=>$zone])->fetchAll(PDO::FETCH_ASSOC);
+
+    $sql2 = "   SELECT 
+                        CONCAT (h.lname, ', ', h.fname) AS name,
+                        weapon_type AS weapon,
+                        animal_name AS animal
+                FROM hunter_kill hk
+                JOIN hunter h on (hk.hunter_id = h.hunter_id)
+                JOIN animal a on (a.animal_id = hk.animal_id)
+                JOIN weapon w on (w.weapon_id = hk.weapon_id)
+                WHERE hk.hunter_id = :hid1
+                AND   hk.animal_id = :aid3
+                AND   hk.date_time = :did7
+                AND   hk.weapon_id = :wid2";
+
+    $result2 = pdo($pdo, $sql2, ['hid1'=>$hunter_id,'wid2'=>$weapon_id,'aid3'=>$animal_id,'did7'=>$date_time])->fetch();
+
 ?>
 
 <html>
@@ -66,8 +82,9 @@
                     <h3> Warden ID: <?= $warden_id ?></h3>
 			        <hr />
                     <h3> Hunter ID: <?= $hunter_id ?></h3>
+                    <h3> Hunter Name: <?= $result2['name'] ?></h3>
                     <hr />
-                    <h3> Animal ID: <?= $animal_id ?></h3>
+                    <h3> Animal: <?= $result2['animal'] ?></h3>
 			        <hr />
                     <h3> State ID: <?= $state_id ?></h3>
 			        <hr />
